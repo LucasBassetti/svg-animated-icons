@@ -1,6 +1,5 @@
 import { listIcons } from "@/lib/registry";
-import Link from "next/link";
-import { IconPreview } from "./icons/[name]/icon-preview";
+import { IconGrid } from "./icon-grid";
 
 export default async function Home() {
   const icons = await listIcons();
@@ -15,16 +14,7 @@ export default async function Home() {
       <pre className="code">npx @svg-animated-icons/cli add accessibility --react</pre>
 
       <h2>Icons ({icons.length})</h2>
-      <div className="grid">
-        {icons.map((icon) => (
-          <Link key={icon.name} href={`/icons/${icon.name}`} className="card icon-hover-trigger">
-            <div className="preview">
-              <IconPreview svg={icon.svg} css={icon.css} />
-            </div>
-            <span className="card-name">{icon.meta.displayName}</span>
-          </Link>
-        ))}
-      </div>
+      <IconGrid icons={icons} />
     </main>
   );
 }

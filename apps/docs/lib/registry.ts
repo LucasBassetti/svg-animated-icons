@@ -12,6 +12,7 @@ export type IconMeta = {
   viewBox: string;
   parts: IconPart[];
   morphCompatibleWith?: string[];
+  aliases?: string[];
 };
 
 export type RegistryEntry = {
@@ -20,6 +21,12 @@ export type RegistryEntry = {
   svg: string;
   css: string;
   meta: IconMeta;
+};
+
+export type IconIndexEntry = {
+  name: string;
+  displayName: string;
+  aliases: string[];
 };
 
 export async function listIcons(): Promise<RegistryEntry[]> {
@@ -31,4 +38,10 @@ export async function listIcons(): Promise<RegistryEntry[]> {
 export async function readIcon(name: string): Promise<RegistryEntry> {
   const content = await readFile(join(REGISTRY_DIR, `${name}.json`), "utf8");
   return JSON.parse(content) as RegistryEntry;
+}
+
+export async function readIconIndex(): Promise<IconIndexEntry[]> {
+  const content = await readFile(join(REGISTRY_DIR, "index.json"), "utf8");
+  const parsed = JSON.parse(content) as { icons: IconIndexEntry[] };
+  return parsed.icons;
 }
