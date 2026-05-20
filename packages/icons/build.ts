@@ -19,6 +19,7 @@ type IconMeta = {
   viewBox: string;
   parts: IconPart[];
   morphCompatibleWith?: string[];
+  aliases?: string[];
 };
 
 type RegistryEntry = {
@@ -50,11 +51,25 @@ function extractViewBox(svg: string): string {
   return svg.match(/\bviewBox="([^"]+)"/)?.[1] ?? "0 0 15 15";
 }
 
+async function readAliases(dir: string): Promise<string[] | undefined> {
+  try {
+    const raw = await readFile(join(dir, "aliases.json"), "utf8");
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed) && parsed.every((v) => typeof v === "string")) {
+      return parsed;
+    }
+    return undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 async function buildIcon(name: string): Promise<RegistryEntry> {
   const dir = join(SOURCE_DIR, name);
   const svgRaw = (await readFile(join(dir, "icon.svg"), "utf8")).trim();
   const css = (await readFile(join(dir, "styles.css"), "utf8")).trim();
   const svg = prepareSvg(svgRaw, `ai-${name}-icon`);
+  const aliases = await readAliases(dir);
 
   return {
     name,
@@ -66,6 +81,7 @@ async function buildIcon(name: string): Promise<RegistryEntry> {
       displayName: nameToDisplayName(name),
       viewBox: extractViewBox(svgRaw),
       parts: [],
+      ...(aliases ? { aliases } : {}),
     },
   };
 }
@@ -114,6 +130,7 @@ export async function buildRegistry(): Promise<void> {
     icons: built.map(({ name, meta }) => ({
       name,
       displayName: meta.displayName,
+      aliases: meta.aliases ?? [],
     })),
   };
   await writeFile(join(OUTPUT_DIR, "index.json"), `${JSON.stringify(index, null, 2)}\n`);
