@@ -1,0 +1,40 @@
+.ai-pause-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-pause-icon * {
+  transform-box: fill-box;
+}
+
+.ai-pause-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-pause-icon .bar-left,
+.ai-pause-icon .bar-right {
+  transform-origin: center;
+}
+
+.ai-pause-icon:not(.no-hover):hover .bar-left {
+  animation: ai-pause-tap-left 700ms ease-in-out;
+}
+
+.ai-pause-icon:not(.no-hover):hover .bar-right {
+  animation: ai-pause-tap-right 700ms ease-in-out;
+}
+
+@keyframes ai-pause-tap-left {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-0.6px); }
+}
+
+@keyframes ai-pause-tap-right {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(0.6px); }
+}

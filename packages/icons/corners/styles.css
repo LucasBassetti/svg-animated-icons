@@ -1,0 +1,29 @@
+.ai-corners-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-corners-icon * {
+  transform-box: fill-box;
+}
+
+.ai-corners-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-corners-icon .corner { transform-origin: center; }
+
+.ai-corners-icon:not(.no-hover):hover .corner-tl { animation: ai-corners-tl 700ms ease-in-out; }
+.ai-corners-icon:not(.no-hover):hover .corner-tr { animation: ai-corners-tr 700ms ease-in-out; }
+.ai-corners-icon:not(.no-hover):hover .corner-bl { animation: ai-corners-bl 700ms ease-in-out; }
+.ai-corners-icon:not(.no-hover):hover .corner-br { animation: ai-corners-br 700ms ease-in-out; }
+
+@keyframes ai-corners-tl { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-1.25px, -1.25px); } }
+@keyframes ai-corners-tr { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(1.25px, -1.25px); } }
+@keyframes ai-corners-bl { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-1.25px, 1.25px); } }
+@keyframes ai-corners-br { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(1.25px, 1.25px); } }

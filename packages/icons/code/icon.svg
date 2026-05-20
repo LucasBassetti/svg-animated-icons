@@ -1,0 +1,5 @@
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path class="bracket-left" d="M5 5L2 7.5L5 10" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="bracket-right" d="M10 5L13 7.5L10 10" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="slash" d="M9 2.5L6 12.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,31 @@
+.ai-file-plus-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-file-plus-icon * {
+  transform-box: fill-box;
+}
+
+.ai-file-plus-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-file-plus-icon .plus {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-file-plus-icon:not(.no-hover):hover .plus {
+  animation: ai-file-plus-rotate 700ms ease-in-out;
+}
+
+@keyframes ai-file-plus-rotate {
+  0%, 100% { transform: rotate(0); }
+  50% { transform: rotate(90deg); }
+}

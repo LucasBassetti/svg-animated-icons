@@ -1,0 +1,67 @@
+.ai-moon-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-moon-icon * {
+  transform-box: fill-box;
+}
+
+.ai-moon-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-moon-icon .moon {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-moon-icon .star-near,
+.ai-moon-icon .star-mid,
+.ai-moon-icon .star-far {
+  transform-origin: center;
+}
+
+.ai-moon-icon:not(.no-hover):hover .moon {
+  animation: ai-moon-tilt 700ms ease-in-out;
+}
+
+.ai-moon-icon:not(.no-hover):hover .star-near {
+  animation: ai-moon-twinkle-near 700ms ease-in-out;
+}
+
+.ai-moon-icon:not(.no-hover):hover .star-mid {
+  animation: ai-moon-twinkle-mid 700ms ease-in-out;
+}
+
+.ai-moon-icon:not(.no-hover):hover .star-far {
+  animation: ai-moon-twinkle-far 700ms ease-in-out;
+}
+
+@keyframes ai-moon-tilt {
+  0%, 100% { transform: rotate(0); }
+  50% { transform: rotate(-15deg); }
+}
+
+@keyframes ai-moon-twinkle-near {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.5) rotate(15deg); }
+  30% { transform: scale(1); }
+}
+
+@keyframes ai-moon-twinkle-mid {
+  0%, 35%, 100% { transform: scale(1); }
+  50% { transform: scale(1.5) rotate(-15deg); }
+  65% { transform: scale(1); }
+}
+
+@keyframes ai-moon-twinkle-far {
+  0%, 60%, 100% { transform: scale(1); }
+  75% { transform: scale(1.5) rotate(15deg); }
+  90% { transform: scale(1); }
+}

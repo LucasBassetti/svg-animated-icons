@@ -1,0 +1,30 @@
+.ai-resume-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-resume-icon * {
+  transform-box: fill-box;
+}
+
+.ai-resume-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-resume-icon .triangle {
+  transform-origin: center;
+}
+
+.ai-resume-icon:not(.no-hover):hover .triangle {
+  animation: ai-resume-push 700ms ease-in-out;
+}
+
+@keyframes ai-resume-push {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(0.8px); }
+}

@@ -1,0 +1,30 @@
+.ai-sewing-pin-solid-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-sewing-pin-solid-icon * {
+  transform-box: fill-box;
+}
+
+.ai-sewing-pin-solid-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-sewing-pin-solid-icon .pin {
+  transform-origin: center top;
+}
+
+.ai-sewing-pin-solid-icon:not(.no-hover):hover .pin {
+  animation: ai-sewing-pin-solid-press 700ms ease-in-out;
+}
+
+@keyframes ai-sewing-pin-solid-press {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(0.8px); }
+}

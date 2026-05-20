@@ -1,0 +1,30 @@
+.ai-linkedin-logo-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-linkedin-logo-icon * {
+  transform-box: fill-box;
+}
+
+.ai-linkedin-logo-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-linkedin-logo-icon .logo {
+  transform-origin: center;
+}
+
+.ai-linkedin-logo-icon:not(.no-hover):hover .logo {
+  animation: ai-linkedin-logo-bounce 700ms ease-in-out;
+}
+
+@keyframes ai-linkedin-logo-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1px); }
+}

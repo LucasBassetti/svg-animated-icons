@@ -1,0 +1,51 @@
+.ai-columns-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-columns-icon * {
+  transform-box: fill-box;
+}
+
+.ai-columns-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-columns-icon .col {
+  transform-origin: center;
+}
+
+.ai-columns-icon:not(.no-hover):hover .col-1 {
+  animation: ai-columns-col-1 700ms ease-in-out;
+}
+.ai-columns-icon:not(.no-hover):hover .col-2 {
+  animation: ai-columns-col-2 700ms ease-in-out;
+}
+.ai-columns-icon:not(.no-hover):hover .col-3 {
+  animation: ai-columns-col-3 700ms ease-in-out;
+}
+.ai-columns-icon:not(.no-hover):hover .col-4 {
+  animation: ai-columns-col-4 700ms ease-in-out;
+}
+
+@keyframes ai-columns-col-1 {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(3.5px); }
+}
+@keyframes ai-columns-col-2 {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(1.25px); }
+}
+@keyframes ai-columns-col-3 {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-1.25px); }
+}
+@keyframes ai-columns-col-4 {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-3.5px); }
+}

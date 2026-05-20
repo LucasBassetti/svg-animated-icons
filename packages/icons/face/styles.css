@@ -1,0 +1,30 @@
+.ai-face-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-face-icon * {
+  transform-box: fill-box;
+}
+
+.ai-face-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-face-icon .eye-right {
+  transform-origin: center;
+}
+
+.ai-face-icon:not(.no-hover):hover .eye-right {
+  animation: ai-face-blink 700ms ease-in-out;
+}
+
+@keyframes ai-face-blink {
+  0%, 30%, 70%, 100% { transform: scaleY(1); }
+  40%, 60% { transform: scaleY(0.1); }
+}

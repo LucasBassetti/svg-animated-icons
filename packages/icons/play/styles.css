@@ -1,0 +1,30 @@
+.ai-play-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-play-icon * {
+  transform-box: fill-box;
+}
+
+.ai-play-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-play-icon .triangle {
+  transform-origin: center;
+}
+
+.ai-play-icon:not(.no-hover):hover .triangle {
+  animation: ai-play-push 700ms ease-in-out;
+}
+
+@keyframes ai-play-push {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(1.2px); }
+}

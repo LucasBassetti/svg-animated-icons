@@ -1,0 +1,26 @@
+{
+  "$schema": "https://turborepo.dev/schema.json",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+    },
+    "@svg-animated-icons/docs#build": {
+      "dependsOn": ["@svg-animated-icons/icons#registry:build"],
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "typecheck": {
+      "dependsOn": ["^build"]
+    },
+    "registry:build": {
+      "outputs": ["../../apps/docs/public/r/**"]
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}

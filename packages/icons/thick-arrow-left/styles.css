@@ -1,0 +1,30 @@
+.ai-thick-arrow-left-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-thick-arrow-left-icon * {
+  transform-box: fill-box;
+}
+
+.ai-thick-arrow-left-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-thick-arrow-left-icon .arrow {
+  transform-origin: center;
+}
+
+.ai-thick-arrow-left-icon:not(.no-hover):hover .arrow {
+  animation: ai-thick-arrow-left-bounce 700ms ease-in-out;
+}
+
+@keyframes ai-thick-arrow-left-bounce {
+  0%, 50%, 100% { transform: translateX(0); }
+  25%, 75% { transform: translateX(-1.5px); }
+}

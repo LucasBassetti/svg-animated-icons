@@ -1,0 +1,32 @@
+.ai-file-text-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-file-text-icon * {
+  transform-box: fill-box;
+}
+
+.ai-file-text-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-file-text-icon .line { transform-origin: center; }
+
+.ai-file-text-icon:not(.no-hover):hover .line {
+  animation: ai-file-text-wave 700ms ease-in-out;
+}
+
+.ai-file-text-icon:not(.no-hover):hover .line-1 { animation-delay: 0ms; }
+.ai-file-text-icon:not(.no-hover):hover .line-2 { animation-delay: 100ms; }
+.ai-file-text-icon:not(.no-hover):hover .line-3 { animation-delay: 200ms; }
+
+@keyframes ai-file-text-wave {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(1px); }
+}

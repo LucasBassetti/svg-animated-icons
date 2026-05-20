@@ -1,0 +1,30 @@
+.ai-keyboard-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-keyboard-icon * {
+  transform-box: fill-box;
+}
+
+.ai-keyboard-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-keyboard-icon .spacebar {
+  transform-origin: center;
+}
+
+.ai-keyboard-icon:not(.no-hover):hover .spacebar {
+  animation: ai-keyboard-press 700ms ease-in-out;
+}
+
+@keyframes ai-keyboard-press {
+  0%, 100% { transform: translateY(0); }
+  35%, 55% { transform: translateY(0.5px); }
+}

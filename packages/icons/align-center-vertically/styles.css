@@ -1,0 +1,35 @@
+.ai-align-center-vertically-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-align-center-vertically-icon * {
+  transform-box: fill-box;
+}
+
+.ai-align-center-vertically-icon:not(.no-hover):hover .top-fill,
+.ai-align-center-vertically-icon:not(.no-hover):hover .bottom-fill {
+  animation: ai-align-center-vertically-motion 700ms ease-in-out;
+}
+
+.ai-align-center-vertically-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-align-center-vertically-motion {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(-1.25px);
+  }
+  66% {
+    transform: translateX(1.25px);
+  }
+}

@@ -1,0 +1,70 @@
+.ai-align-baseline-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-align-baseline-icon * {
+  transform-box: fill-box;
+  transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 220ms ease;
+}
+
+.ai-align-baseline-icon .arrow,
+.ai-align-baseline-icon .letter {
+  transform-origin: center bottom;
+}
+.ai-align-baseline-icon .baseline {
+  transform-origin: center;
+}
+
+.ai-align-baseline-icon:not(.no-hover):hover .arrow {
+  animation: ai-align-baseline-motion-1 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ai-align-baseline-icon:not(.no-hover):hover .letter {
+  animation: ai-align-baseline-motion-2 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation-delay: 45ms;
+}
+
+.ai-align-baseline-icon:not(.no-hover):hover .baseline {
+  animation: ai-align-baseline-motion-3 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation-delay: 90ms;
+}
+
+.ai-align-baseline-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-align-baseline-motion-1 {
+  0%,
+  100% {
+    transform: none;
+  }
+  52% {
+    transform: translateY(0.8px);
+  }
+}
+
+@keyframes ai-align-baseline-motion-2 {
+  0%,
+  100% {
+    transform: none;
+  }
+  52% {
+    transform: translateY(0.45px);
+  }
+}
+
+@keyframes ai-align-baseline-motion-3 {
+  0%,
+  100% {
+    transform: none;
+  }
+  52% {
+    transform: scaleX(1.06);
+  }
+}

@@ -1,0 +1,31 @@
+.ai-plus-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-plus-icon * {
+  transform-box: fill-box;
+}
+
+.ai-plus-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-plus-icon .plus {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-plus-icon:not(.no-hover):hover .plus {
+  animation: ai-plus-spin 700ms ease-in-out;
+}
+
+@keyframes ai-plus-spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(90deg); }
+}

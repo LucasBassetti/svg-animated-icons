@@ -1,0 +1,30 @@
+.ai-speaker-quiet-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-speaker-quiet-icon * {
+  transform-box: fill-box;
+}
+
+.ai-speaker-quiet-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-speaker-quiet-icon .wave {
+  transform-origin: left center;
+}
+
+.ai-speaker-quiet-icon:not(.no-hover):hover .wave {
+  animation: ai-speaker-quiet-radiate 700ms ease-in-out;
+}
+
+@keyframes ai-speaker-quiet-radiate {
+  0%, 100% { transform: scaleX(1); opacity: 1; }
+  50% { transform: scaleX(1.3); opacity: 0.5; }
+}

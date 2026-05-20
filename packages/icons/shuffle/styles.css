@@ -1,0 +1,33 @@
+.ai-shuffle-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-shuffle-icon * {
+  transform-box: fill-box;
+}
+
+.ai-shuffle-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-shuffle-icon .shuffle {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-shuffle-icon:not(.no-hover):hover .shuffle {
+  animation: ai-shuffle-swap 700ms ease-in-out;
+}
+
+@keyframes ai-shuffle-swap {
+  0%, 100% { transform: scaleY(1); }
+  25% { transform: scaleY(0); }
+  50% { transform: scaleY(-1); }
+  75% { transform: scaleY(0); }
+}

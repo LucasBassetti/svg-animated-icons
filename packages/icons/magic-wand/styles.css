@@ -1,0 +1,68 @@
+.ai-magic-wand-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-magic-wand-icon * {
+  transform-box: fill-box;
+}
+
+.ai-magic-wand-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-magic-wand-icon .wand {
+  transform-box: view-box;
+  transform-origin: 2.5px 12.5px;
+}
+
+.ai-magic-wand-icon .spark-near,
+.ai-magic-wand-icon .spark-mid,
+.ai-magic-wand-icon .spark-far {
+  transform-origin: center;
+}
+
+.ai-magic-wand-icon:not(.no-hover):hover .wand {
+  animation: ai-magic-wand-wave 700ms ease-in-out;
+}
+
+.ai-magic-wand-icon:not(.no-hover):hover .spark-near {
+  animation: ai-magic-wand-twinkle-near 700ms ease-in-out;
+}
+
+.ai-magic-wand-icon:not(.no-hover):hover .spark-mid {
+  animation: ai-magic-wand-twinkle-mid 700ms ease-in-out;
+}
+
+.ai-magic-wand-icon:not(.no-hover):hover .spark-far {
+  animation: ai-magic-wand-twinkle-far 700ms ease-in-out;
+}
+
+@keyframes ai-magic-wand-wave {
+  0%, 100% { transform: rotate(0); }
+  35% { transform: rotate(-12deg); }
+  70% { transform: rotate(8deg); }
+}
+
+@keyframes ai-magic-wand-twinkle-near {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.4) rotate(15deg); }
+  30% { transform: scale(1); }
+}
+
+@keyframes ai-magic-wand-twinkle-mid {
+  0%, 40%, 100% { transform: scale(1); }
+  55% { transform: scale(1.4) rotate(-15deg); }
+  70% { transform: scale(1); }
+}
+
+@keyframes ai-magic-wand-twinkle-far {
+  0%, 65%, 100% { transform: scale(1); }
+  80% { transform: scale(1.4) rotate(15deg); }
+  95% { transform: scale(1); }
+}

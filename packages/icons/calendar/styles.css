@@ -1,0 +1,38 @@
+.ai-calendar-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-calendar-icon * {
+  transform-box: fill-box;
+}
+
+.ai-calendar-icon:not(.no-hover):hover .day {
+  animation: ai-calendar-motion-1 700ms ease-in-out;
+}
+
+.ai-calendar-icon:not(.no-hover):hover .day-1 { animation-delay: 0ms; }
+.ai-calendar-icon:not(.no-hover):hover .day-2 { animation-delay: 80ms; }
+.ai-calendar-icon:not(.no-hover):hover .day-3 { animation-delay: 160ms; }
+.ai-calendar-icon:not(.no-hover):hover .day-4 { animation-delay: 240ms; }
+.ai-calendar-icon:not(.no-hover):hover .day-5 { animation-delay: 320ms; }
+.ai-calendar-icon:not(.no-hover):hover .day-6 { animation-delay: 400ms; }
+
+.ai-calendar-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-calendar-motion-1 {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}

@@ -1,0 +1,50 @@
+.ai-letter-spacing-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-letter-spacing-icon * {
+  transform-box: fill-box;
+}
+
+.ai-letter-spacing-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-letter-spacing-icon .a,
+.ai-letter-spacing-icon .v,
+.ai-letter-spacing-icon .arrow {
+  transform-origin: center;
+}
+
+.ai-letter-spacing-icon:not(.no-hover):hover .a {
+  animation: ai-letter-spacing-pull-a 700ms ease-in-out;
+}
+
+.ai-letter-spacing-icon:not(.no-hover):hover .v {
+  animation: ai-letter-spacing-pull-v 700ms ease-in-out;
+}
+
+.ai-letter-spacing-icon:not(.no-hover):hover .arrow {
+  animation: ai-letter-spacing-stretch 700ms ease-in-out;
+}
+
+@keyframes ai-letter-spacing-pull-a {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-1.2px); }
+}
+
+@keyframes ai-letter-spacing-pull-v {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(1.2px); }
+}
+
+@keyframes ai-letter-spacing-stretch {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(1.15); }
+}

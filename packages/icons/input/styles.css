@@ -1,0 +1,40 @@
+.ai-input-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-input-icon * {
+  transform-box: fill-box;
+}
+
+.ai-input-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-input-icon .left,
+.ai-input-icon .right {
+  transform-origin: center;
+}
+
+.ai-input-icon:not(.no-hover):hover .left {
+  animation: ai-input-spread-left 700ms ease-in-out;
+}
+
+.ai-input-icon:not(.no-hover):hover .right {
+  animation: ai-input-spread-right 700ms ease-in-out;
+}
+
+@keyframes ai-input-spread-left {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-1px); }
+}
+
+@keyframes ai-input-spread-right {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(1px); }
+}

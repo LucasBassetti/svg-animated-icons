@@ -1,0 +1,40 @@
+.ai-code-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-code-icon * {
+  transform-box: fill-box;
+}
+
+.ai-code-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-code-icon .bracket-left,
+.ai-code-icon .bracket-right {
+  transform-origin: center;
+}
+
+.ai-code-icon:not(.no-hover):hover .bracket-left {
+  animation: ai-code-left 700ms ease-in-out;
+}
+
+.ai-code-icon:not(.no-hover):hover .bracket-right {
+  animation: ai-code-right 700ms ease-in-out;
+}
+
+@keyframes ai-code-left {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-1.5px); }
+}
+
+@keyframes ai-code-right {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(1.5px); }
+}

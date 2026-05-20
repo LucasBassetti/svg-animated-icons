@@ -1,0 +1,30 @@
+.ai-triangle-right-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-triangle-right-icon * {
+  transform-box: fill-box;
+}
+
+.ai-triangle-right-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-triangle-right-icon .triangle {
+  transform-origin: center;
+}
+
+.ai-triangle-right-icon:not(.no-hover):hover .triangle {
+  animation: ai-triangle-right-bounce 700ms ease-in-out;
+}
+
+@keyframes ai-triangle-right-bounce {
+  0%, 50%, 100% { transform: translateX(0); }
+  25%, 75% { transform: translateX(+1.5px); }
+}

@@ -1,0 +1,32 @@
+.ai-table-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-table-icon * {
+  transform-box: fill-box;
+}
+
+.ai-table-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-table-icon .grid {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-table-icon:not(.no-hover):hover .grid {
+  animation: ai-table-tilt 700ms ease-in-out;
+}
+
+@keyframes ai-table-tilt {
+  0%, 100% { transform: rotate(0); }
+  35% { transform: rotate(-4deg); }
+  70% { transform: rotate(4deg); }
+}

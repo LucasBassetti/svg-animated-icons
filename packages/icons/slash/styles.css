@@ -1,0 +1,31 @@
+.ai-slash-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-slash-icon * {
+  transform-box: fill-box;
+}
+
+.ai-slash-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-slash-icon .slash {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-slash-icon:not(.no-hover):hover .slash {
+  animation: ai-slash-cut 700ms ease-in-out;
+}
+
+@keyframes ai-slash-cut {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(0.8px, -0.8px); }
+}

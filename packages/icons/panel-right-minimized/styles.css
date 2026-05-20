@@ -1,0 +1,30 @@
+.ai-panel-right-minimized-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-panel-right-minimized-icon * {
+  transform-box: fill-box;
+}
+
+.ai-panel-right-minimized-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-panel-right-minimized-icon .dash {
+  transform-origin: center;
+}
+
+.ai-panel-right-minimized-icon:not(.no-hover):hover .dash {
+  animation: ai-panel-right-minimized-slide 700ms ease-in-out;
+}
+
+@keyframes ai-panel-right-minimized-slide {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-1px); }
+}

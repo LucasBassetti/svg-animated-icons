@@ -1,0 +1,33 @@
+.ai-heart-filled-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-heart-filled-icon * {
+  transform-box: fill-box;
+}
+
+.ai-heart-filled-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-heart-filled-icon .heart {
+  transform-origin: center;
+}
+
+.ai-heart-filled-icon:not(.no-hover):hover .heart {
+  animation: ai-heart-filled-beat 700ms ease-in-out;
+}
+
+@keyframes ai-heart-filled-beat {
+  0%, 100% { transform: scale(1); }
+  20% { transform: scale(1.12); }
+  35% { transform: scale(1); }
+  55% { transform: scale(1.1); }
+  70% { transform: scale(1); }
+}

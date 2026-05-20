@@ -1,0 +1,35 @@
+.ai-space-evenly-vertically-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-space-evenly-vertically-icon * {
+  transform-box: fill-box;
+}
+
+.ai-space-evenly-vertically-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-space-evenly-vertically-icon .block-1,
+.ai-space-evenly-vertically-icon .block-2 {
+  transform-origin: center;
+}
+
+.ai-space-evenly-vertically-icon:not(.no-hover):hover .block-1 {
+  animation: ai-space-evenly-vertically-pulse 700ms ease-in-out;
+}
+
+.ai-space-evenly-vertically-icon:not(.no-hover):hover .block-2 {
+  animation: ai-space-evenly-vertically-pulse 700ms ease-in-out 150ms;
+}
+
+@keyframes ai-space-evenly-vertically-pulse {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.2); }
+}

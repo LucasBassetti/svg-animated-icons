@@ -1,0 +1,30 @@
+.ai-envelope-open-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-envelope-open-icon * {
+  transform-box: fill-box;
+}
+
+.ai-envelope-open-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-envelope-open-icon .envelope {
+  transform-origin: center;
+}
+
+.ai-envelope-open-icon:not(.no-hover):hover .envelope {
+  animation: ai-envelope-open-motion 700ms ease-in-out;
+}
+
+@keyframes ai-envelope-open-motion {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1px); }
+}

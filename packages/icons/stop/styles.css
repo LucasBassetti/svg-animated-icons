@@ -1,0 +1,31 @@
+.ai-stop-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-stop-icon * {
+  transform-box: fill-box;
+}
+
+.ai-stop-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-stop-icon .square {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-stop-icon:not(.no-hover):hover .square {
+  animation: ai-stop-press 700ms ease-in-out;
+}
+
+@keyframes ai-stop-press {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.85); }
+}

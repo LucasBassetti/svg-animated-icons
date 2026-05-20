@@ -1,0 +1,40 @@
+.ai-people-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-people-icon * {
+  transform-box: fill-box;
+}
+
+.ai-people-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-people-icon .left,
+.ai-people-icon .right {
+  transform-origin: center;
+}
+
+.ai-people-icon:not(.no-hover):hover .left {
+  animation: ai-people-bob-left 700ms ease-in-out;
+}
+
+.ai-people-icon:not(.no-hover):hover .right {
+  animation: ai-people-bob-right 700ms ease-in-out;
+}
+
+@keyframes ai-people-bob-left {
+  0%, 40%, 100% { transform: translateY(0); }
+  20% { transform: translateY(-1.2px); }
+}
+
+@keyframes ai-people-bob-right {
+  0%, 50%, 100% { transform: translateY(0); }
+  70% { transform: translateY(-1.2px); }
+}

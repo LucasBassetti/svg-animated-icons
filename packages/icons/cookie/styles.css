@@ -1,0 +1,32 @@
+.ai-cookie-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-cookie-icon * {
+  transform-box: fill-box;
+}
+
+.ai-cookie-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-cookie-icon .cookie {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-cookie-icon:not(.no-hover):hover .cookie {
+  animation: ai-cookie-roll 700ms ease-in-out;
+}
+
+@keyframes ai-cookie-roll {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-8deg); }
+  75% { transform: rotate(8deg); }
+}

@@ -1,0 +1,32 @@
+.ai-font-bold-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-font-bold-icon * {
+  transform-box: fill-box;
+}
+
+.ai-font-bold-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-font-bold-icon .letter {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-font-bold-icon:not(.no-hover):hover .letter {
+  animation: ai-font-bold-rock 700ms ease-in-out;
+}
+
+@keyframes ai-font-bold-rock {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-6deg); }
+  75% { transform: rotate(6deg); }
+}

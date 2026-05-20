@@ -1,0 +1,40 @@
+.ai-text-align-middle-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-text-align-middle-icon * {
+  transform-box: fill-box;
+}
+
+.ai-text-align-middle-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-text-align-middle-icon .arrow-top,
+.ai-text-align-middle-icon .arrow-bottom {
+  transform-origin: center;
+}
+
+.ai-text-align-middle-icon:not(.no-hover):hover .arrow-top {
+  animation: ai-text-align-middle-converge-top 700ms ease-in-out;
+}
+
+.ai-text-align-middle-icon:not(.no-hover):hover .arrow-bottom {
+  animation: ai-text-align-middle-converge-bottom 700ms ease-in-out;
+}
+
+@keyframes ai-text-align-middle-converge-top {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(1px); }
+}
+
+@keyframes ai-text-align-middle-converge-bottom {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1px); }
+}

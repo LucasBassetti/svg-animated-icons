@@ -1,0 +1,30 @@
+.ai-image-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-image-icon * {
+  transform-box: fill-box;
+}
+
+.ai-image-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-image-icon .sun {
+  transform-origin: center;
+}
+
+.ai-image-icon:not(.no-hover):hover .sun {
+  animation: ai-image-rise 700ms ease-in-out;
+}
+
+@keyframes ai-image-rise {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-0.8px); }
+}

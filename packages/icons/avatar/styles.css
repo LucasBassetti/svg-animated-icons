@@ -1,0 +1,35 @@
+.ai-avatar-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-avatar-icon * {
+  transform-box: fill-box;
+}
+
+.ai-avatar-icon .head {
+  transform-origin: center;
+}
+
+.ai-avatar-icon:not(.no-hover):hover .head {
+  animation: ai-avatar-motion-1 700ms ease-in-out;
+}
+
+.ai-avatar-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-avatar-motion-1 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.75px);
+  }
+}

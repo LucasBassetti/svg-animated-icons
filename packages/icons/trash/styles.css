@@ -1,0 +1,32 @@
+.ai-trash-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-trash-icon * {
+  transform-box: fill-box;
+}
+
+.ai-trash-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-trash-icon .lid {
+  transform-box: view-box;
+  transform-origin: 5.5px 1.5px;
+}
+
+.ai-trash-icon:not(.no-hover):hover .lid {
+  animation: ai-trash-jiggle 700ms ease-in-out;
+}
+
+@keyframes ai-trash-jiggle {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-8deg); }
+  75% { transform: rotate(8deg); }
+}

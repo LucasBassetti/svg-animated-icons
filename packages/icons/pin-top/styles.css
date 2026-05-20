@@ -1,0 +1,30 @@
+.ai-pin-top-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-pin-top-icon * {
+  transform-box: fill-box;
+}
+
+.ai-pin-top-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-pin-top-icon .arrow {
+  transform-origin: center;
+}
+
+.ai-pin-top-icon:not(.no-hover):hover .arrow {
+  animation: ai-pin-top-push 700ms ease-in-out;
+}
+
+@keyframes ai-pin-top-push {
+  0%, 50%, 100% { transform: translateY(0); }
+  25%, 75% { transform: translateY(-1px); }
+}

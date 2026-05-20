@@ -1,0 +1,38 @@
+.ai-arrow-left-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-arrow-left-icon * {
+  transform-box: fill-box;
+  transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 220ms ease;
+}
+
+.ai-arrow-left-icon .arrow {
+  transform-origin: center;
+}
+
+.ai-arrow-left-icon:not(.no-hover):hover .arrow {
+  animation: ai-arrow-left-motion-1 700ms ease-in-out;
+}
+
+.ai-arrow-left-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-arrow-left-motion-1 {
+  0%,
+  50%,
+  100% {
+    transform: translateX(0);
+  }
+  25%,
+  75% {
+    transform: translateX(-1.5px);
+  }
+}

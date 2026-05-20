@@ -1,0 +1,32 @@
+.ai-slider-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-slider-icon * {
+  transform-box: fill-box;
+}
+
+.ai-slider-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-slider-icon .knob,
+.ai-slider-icon .cutout {
+  transform-box: view-box;
+}
+
+.ai-slider-icon:not(.no-hover):hover .knob,
+.ai-slider-icon:not(.no-hover):hover .cutout {
+  animation: ai-slider-slide 700ms ease-in-out;
+}
+
+@keyframes ai-slider-slide {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-2.5px); }
+}

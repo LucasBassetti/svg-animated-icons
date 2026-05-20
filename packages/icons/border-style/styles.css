@@ -1,0 +1,35 @@
+.ai-border-style-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-border-style-icon * {
+  transform-box: fill-box;
+}
+
+.ai-border-style-icon:not(.no-hover):hover .row {
+  animation: ai-border-style-motion-1 700ms ease-in-out;
+}
+
+.ai-border-style-icon:not(.no-hover):hover .row-solid { animation-delay: 0ms; }
+.ai-border-style-icon:not(.no-hover):hover .row-dashed { animation-delay: 120ms; }
+.ai-border-style-icon:not(.no-hover):hover .row-dotted { animation-delay: 240ms; }
+
+.ai-border-style-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-border-style-motion-1 {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}

@@ -1,0 +1,40 @@
+.ai-layout-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-layout-icon * {
+  transform-box: fill-box;
+}
+
+.ai-layout-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-layout-icon .left,
+.ai-layout-icon .right {
+  transform-origin: center;
+}
+
+.ai-layout-icon:not(.no-hover):hover .left {
+  animation: ai-layout-merge-left 700ms ease-in-out;
+}
+
+.ai-layout-icon:not(.no-hover):hover .right {
+  animation: ai-layout-merge-right 700ms ease-in-out;
+}
+
+@keyframes ai-layout-merge-left {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(3.5px); }
+}
+
+@keyframes ai-layout-merge-right {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-3.5px); }
+}

@@ -1,0 +1,31 @@
+.ai-drawing-pin-solid-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-drawing-pin-solid-icon * {
+  transform-box: fill-box;
+}
+
+.ai-drawing-pin-solid-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-drawing-pin-solid-icon .pin {
+  transform-box: view-box;
+  transform-origin: 12px 3px;
+}
+
+.ai-drawing-pin-solid-icon:not(.no-hover):hover .pin {
+  animation: ai-drawing-pin-solid-press 700ms ease-in-out;
+}
+
+@keyframes ai-drawing-pin-solid-press {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(0.5px, 0.5px); }
+}

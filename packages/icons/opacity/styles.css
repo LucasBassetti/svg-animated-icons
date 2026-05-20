@@ -1,0 +1,31 @@
+.ai-opacity-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-opacity-icon * {
+  transform-box: fill-box;
+}
+
+.ai-opacity-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-opacity-icon .drop {
+  transform-box: view-box;
+  transform-origin: 7.5px 1.5px;
+}
+
+.ai-opacity-icon:not(.no-hover):hover .drop {
+  animation: ai-opacity-bob 700ms ease-in-out;
+}
+
+@keyframes ai-opacity-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(0.8px); }
+}

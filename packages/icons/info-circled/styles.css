@@ -1,0 +1,31 @@
+.ai-info-circled-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-info-circled-icon * {
+  transform-box: fill-box;
+}
+
+.ai-info-circled-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-info-circled-icon .dot {
+  transform-origin: center;
+}
+
+.ai-info-circled-icon:not(.no-hover):hover .dot {
+  animation: ai-info-circled-alert 700ms ease-in-out;
+}
+
+@keyframes ai-info-circled-alert {
+  0%, 100% { transform: translateY(0); }
+  25%, 75% { transform: translateY(-0.5px); }
+  50% { transform: translateY(0); }
+}

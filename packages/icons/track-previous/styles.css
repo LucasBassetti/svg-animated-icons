@@ -1,0 +1,30 @@
+.ai-track-previous-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-track-previous-icon * {
+  transform-box: fill-box;
+}
+
+.ai-track-previous-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-track-previous-icon .triangle {
+  transform-origin: center;
+}
+
+.ai-track-previous-icon:not(.no-hover):hover .triangle {
+  animation: ai-track-previous-push 700ms ease-in-out;
+}
+
+@keyframes ai-track-previous-push {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-1px); }
+}

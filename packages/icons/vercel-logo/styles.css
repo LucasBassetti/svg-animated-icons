@@ -1,0 +1,32 @@
+.ai-vercel-logo-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-vercel-logo-icon * {
+  transform-box: fill-box;
+}
+
+.ai-vercel-logo-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-vercel-logo-icon .triangle {
+  transform-box: view-box;
+  transform-origin: 7.5px 9px;
+}
+
+.ai-vercel-logo-icon:not(.no-hover):hover .triangle {
+  animation: ai-vercel-logo-tilt 700ms ease-in-out;
+}
+
+@keyframes ai-vercel-logo-tilt {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-6deg); }
+  75% { transform: rotate(6deg); }
+}

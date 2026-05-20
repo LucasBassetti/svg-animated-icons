@@ -1,0 +1,30 @@
+.ai-text-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-text-icon * {
+  transform-box: fill-box;
+}
+
+.ai-text-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-text-icon .t {
+  transform-origin: center;
+}
+
+.ai-text-icon:not(.no-hover):hover .t {
+  animation: ai-text-emphasis 700ms ease-in-out;
+}
+
+@keyframes ai-text-emphasis {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-0.8px); }
+}

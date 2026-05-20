@@ -1,0 +1,31 @@
+.ai-padding-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-padding-icon * {
+  transform-box: fill-box;
+}
+
+.ai-padding-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-padding-icon .dots {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-padding-icon:not(.no-hover):hover .dots {
+  animation: ai-padding-condense 700ms ease-in-out;
+}
+
+@keyframes ai-padding-condense {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.85); }
+}

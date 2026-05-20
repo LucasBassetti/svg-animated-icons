@@ -1,0 +1,31 @@
+.ai-line-height-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-line-height-icon * {
+  transform-box: fill-box;
+}
+
+.ai-line-height-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-line-height-icon .arrow {
+  transform-box: view-box;
+  transform-origin: 3.5px 7.5px;
+}
+
+.ai-line-height-icon:not(.no-hover):hover .arrow {
+  animation: ai-line-height-stretch 700ms ease-in-out;
+}
+
+@keyframes ai-line-height-stretch {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.15); }
+}

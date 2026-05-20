@@ -1,0 +1,31 @@
+.ai-ruler-square-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-ruler-square-icon * {
+  transform-box: fill-box;
+}
+
+.ai-ruler-square-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-ruler-square-icon .ruler {
+  transform-box: view-box;
+  transform-origin: 0.5px 14.5px;
+}
+
+.ai-ruler-square-icon:not(.no-hover):hover .ruler {
+  animation: ai-ruler-square-pivot 700ms ease-in-out;
+}
+
+@keyframes ai-ruler-square-pivot {
+  0%, 100% { transform: rotate(0); }
+  50% { transform: rotate(6deg); }
+}

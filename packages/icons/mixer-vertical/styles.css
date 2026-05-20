@@ -1,0 +1,44 @@
+.ai-mixer-vertical-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-mixer-vertical-icon * {
+  transform-box: fill-box;
+}
+
+.ai-mixer-vertical-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-mixer-vertical-icon .knob-left,
+.ai-mixer-vertical-icon .knob-right,
+.ai-mixer-vertical-icon .cutout-left,
+.ai-mixer-vertical-icon .cutout-right {
+  transform-box: view-box;
+}
+
+.ai-mixer-vertical-icon:not(.no-hover):hover .knob-left,
+.ai-mixer-vertical-icon:not(.no-hover):hover .cutout-left {
+  animation: ai-mixer-vertical-slide-left 700ms ease-in-out;
+}
+
+.ai-mixer-vertical-icon:not(.no-hover):hover .knob-right,
+.ai-mixer-vertical-icon:not(.no-hover):hover .cutout-right {
+  animation: ai-mixer-vertical-slide-right 700ms ease-in-out;
+}
+
+@keyframes ai-mixer-vertical-slide-left {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+@keyframes ai-mixer-vertical-slide-right {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(2px); }
+}

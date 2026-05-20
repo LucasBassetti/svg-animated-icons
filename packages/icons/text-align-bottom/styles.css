@@ -1,0 +1,30 @@
+.ai-text-align-bottom-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-text-align-bottom-icon * {
+  transform-box: fill-box;
+}
+
+.ai-text-align-bottom-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-text-align-bottom-icon .arrow {
+  transform-origin: center;
+}
+
+.ai-text-align-bottom-icon:not(.no-hover):hover .arrow {
+  animation: ai-text-align-bottom-push 700ms ease-in-out;
+}
+
+@keyframes ai-text-align-bottom-push {
+  0%, 50%, 100% { transform: translateY(0); }
+  25%, 75% { transform: translateY(1px); }
+}

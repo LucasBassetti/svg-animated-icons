@@ -1,0 +1,31 @@
+.ai-rocket-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-rocket-icon * {
+  transform-box: fill-box;
+}
+
+.ai-rocket-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-rocket-icon .rocket {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-rocket-icon:not(.no-hover):hover .rocket {
+  animation: ai-rocket-launch 700ms ease-in-out;
+}
+
+@keyframes ai-rocket-launch {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(1.2px, -1.2px); }
+}

@@ -1,0 +1,49 @@
+.ai-border-width-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-border-width-icon * {
+  transform-box: fill-box;
+}
+
+.ai-border-width-icon .bar {
+  transform-origin: center;
+}
+
+.ai-border-width-icon:not(.no-hover):hover .bar-thin {
+  animation: ai-border-width-thin 700ms ease-in-out;
+}
+
+.ai-border-width-icon:not(.no-hover):hover .bar-mid {
+  animation: ai-border-width-mid 700ms ease-in-out;
+}
+
+.ai-border-width-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-border-width-thin {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6.25px);
+  }
+}
+
+@keyframes ai-border-width-mid {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(2.25px);
+  }
+}

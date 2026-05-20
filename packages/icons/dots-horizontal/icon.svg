@@ -1,0 +1,5 @@
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle class="dot dot-1" cx="2.5" cy="7.5" r="1.125" fill="currentColor"/>
+  <circle class="dot dot-2" cx="7.5" cy="7.5" r="1.125" fill="currentColor"/>
+  <circle class="dot dot-3" cx="12.5" cy="7.5" r="1.125" fill="currentColor"/>
+</svg>

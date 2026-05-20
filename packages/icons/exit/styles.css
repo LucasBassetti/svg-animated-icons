@@ -1,0 +1,28 @@
+.ai-exit-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-exit-icon * {
+  transform-box: fill-box;
+}
+
+.ai-exit-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-exit-icon .arrow { transform-origin: center; }
+
+.ai-exit-icon:not(.no-hover):hover .arrow {
+  animation: ai-exit-motion 700ms ease-in-out;
+}
+
+@keyframes ai-exit-motion {
+  0%, 50%, 100% { transform: translateX(0); }
+  25%, 75% { transform: translateX(1.5px); }
+}

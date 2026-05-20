@@ -1,0 +1,44 @@
+.ai-mixer-horizontal-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-mixer-horizontal-icon * {
+  transform-box: fill-box;
+}
+
+.ai-mixer-horizontal-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-mixer-horizontal-icon .knob-top,
+.ai-mixer-horizontal-icon .knob-bottom,
+.ai-mixer-horizontal-icon .cutout-top,
+.ai-mixer-horizontal-icon .cutout-bottom {
+  transform-box: view-box;
+}
+
+.ai-mixer-horizontal-icon:not(.no-hover):hover .knob-top,
+.ai-mixer-horizontal-icon:not(.no-hover):hover .cutout-top {
+  animation: ai-mixer-horizontal-slide-top 700ms ease-in-out;
+}
+
+.ai-mixer-horizontal-icon:not(.no-hover):hover .knob-bottom,
+.ai-mixer-horizontal-icon:not(.no-hover):hover .cutout-bottom {
+  animation: ai-mixer-horizontal-slide-bottom 700ms ease-in-out;
+}
+
+@keyframes ai-mixer-horizontal-slide-top {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(2px); }
+}
+
+@keyframes ai-mixer-horizontal-slide-bottom {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-2px); }
+}

@@ -1,0 +1,30 @@
+.ai-star-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-star-icon * {
+  transform-box: fill-box;
+}
+
+.ai-star-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-star-icon .star {
+  transform-origin: center;
+}
+
+.ai-star-icon:not(.no-hover):hover .star {
+  animation: ai-star-twinkle 700ms ease-in-out;
+}
+
+@keyframes ai-star-twinkle {
+  0%, 100% { transform: rotate(0) scale(1); }
+  50% { transform: rotate(20deg) scale(1.15); }
+}

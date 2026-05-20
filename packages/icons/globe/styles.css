@@ -1,0 +1,31 @@
+.ai-globe-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-globe-icon * {
+  transform-box: fill-box;
+}
+
+.ai-globe-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-globe-icon .globe {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-globe-icon:not(.no-hover):hover .globe {
+  animation: ai-globe-spin 700ms ease-in-out;
+}
+
+@keyframes ai-globe-spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}

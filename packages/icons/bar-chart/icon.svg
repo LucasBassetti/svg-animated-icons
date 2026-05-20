@@ -1,0 +1,9 @@
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect class="bar bar-1" x="1" y="5" width="1" height="9" rx="0.5" fill="currentColor"/>
+  <rect class="bar bar-2" x="3" y="7" width="1" height="7" rx="0.5" fill="currentColor"/>
+  <rect class="bar bar-3" x="5" y="4" width="1" height="10" rx="0.5" fill="currentColor"/>
+  <rect class="bar bar-4" x="7" y="5" width="1" height="9" rx="0.5" fill="currentColor"/>
+  <rect class="bar bar-5" x="9" y="3" width="1" height="11" rx="0.5" fill="currentColor"/>
+  <rect class="bar bar-6" x="11" y="1" width="1" height="13" rx="0.5" fill="currentColor"/>
+  <rect class="bar bar-7" x="13" y="3" width="1" height="11" rx="0.5" fill="currentColor"/>
+</svg>

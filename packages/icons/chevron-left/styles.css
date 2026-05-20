@@ -1,0 +1,30 @@
+.ai-chevron-left-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-chevron-left-icon * {
+  transform-box: fill-box;
+}
+
+.ai-chevron-left-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-chevron-left-icon .chevron {
+  transform-origin: center;
+}
+
+.ai-chevron-left-icon:not(.no-hover):hover .chevron {
+  animation: ai-chevron-left-motion 700ms ease-in-out;
+}
+
+@keyframes ai-chevron-left-motion {
+  0%, 50%, 100% { transform: translate(0, 0); }
+  25%, 75% { transform: translateX(-1.5px); }
+}

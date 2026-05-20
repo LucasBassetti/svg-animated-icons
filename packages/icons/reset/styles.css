@@ -1,0 +1,31 @@
+.ai-reset-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-reset-icon * {
+  transform-box: fill-box;
+}
+
+.ai-reset-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-reset-icon .arrow {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-reset-icon:not(.no-hover):hover .arrow {
+  animation: ai-reset-spin 700ms linear;
+}
+
+@keyframes ai-reset-spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(-360deg); }
+}

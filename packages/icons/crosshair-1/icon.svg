@@ -1,0 +1,7 @@
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle class="ring" cx="7.5" cy="7.5" r="5" stroke="currentColor" stroke-width="1"/>
+  <path class="tick tick-top" d="M7.5 0.5V3" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+  <path class="tick tick-right" d="M14.5 7.5H12" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+  <path class="tick tick-bottom" d="M7.5 14.5V12" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+  <path class="tick tick-left" d="M0.5 7.5H3" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+</svg>

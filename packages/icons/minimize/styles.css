@@ -1,0 +1,40 @@
+.ai-minimize-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-minimize-icon * {
+  transform-box: fill-box;
+}
+
+.ai-minimize-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-minimize-icon .arrow-bl,
+.ai-minimize-icon .arrow-tr {
+  transform-origin: center;
+}
+
+.ai-minimize-icon:not(.no-hover):hover .arrow-bl {
+  animation: ai-minimize-pull-bl 700ms ease-in-out;
+}
+
+.ai-minimize-icon:not(.no-hover):hover .arrow-tr {
+  animation: ai-minimize-pull-tr 700ms ease-in-out;
+}
+
+@keyframes ai-minimize-pull-bl {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(1.5px, -1.5px); }
+}
+
+@keyframes ai-minimize-pull-tr {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-1.5px, 1.5px); }
+}

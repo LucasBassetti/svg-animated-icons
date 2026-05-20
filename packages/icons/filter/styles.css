@@ -1,0 +1,32 @@
+.ai-filter-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-filter-icon * {
+  transform-box: fill-box;
+}
+
+.ai-filter-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-filter-icon .bar { transform-origin: center; }
+
+.ai-filter-icon:not(.no-hover):hover .bar {
+  animation: ai-filter-narrow 700ms ease-in-out;
+}
+
+.ai-filter-icon:not(.no-hover):hover .bar-1 { animation-delay: 0ms; }
+.ai-filter-icon:not(.no-hover):hover .bar-2 { animation-delay: 100ms; }
+.ai-filter-icon:not(.no-hover):hover .bar-3 { animation-delay: 200ms; }
+
+@keyframes ai-filter-narrow {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(0.65); }
+}

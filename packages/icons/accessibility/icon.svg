@@ -1,0 +1,9 @@
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="7.5" cy="7.5" r="6.25" stroke="currentColor" stroke-width="1.2"/>
+  <circle class="head" cx="7.5" cy="4.05" r="0.8" fill="currentColor"/>
+  <path class="torso" d="M7.5 5.7V8.15" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+  <path class="left-arm" d="M4.95 6.05L7.5 6.55" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+  <path class="right-arm" d="M10.05 6.05L7.5 6.55" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+  <path class="left-leg" d="M7.5 8.15L5.95 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+  <path class="right-leg" d="M7.5 8.15L9.05 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,38 @@
+.ai-arrow-down-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-arrow-down-icon * {
+  transform-box: fill-box;
+  transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 220ms ease;
+}
+
+.ai-arrow-down-icon .arrow {
+  transform-origin: center;
+}
+
+.ai-arrow-down-icon:not(.no-hover):hover .arrow {
+  animation: ai-arrow-down-motion-1 700ms ease-in-out;
+}
+
+.ai-arrow-down-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-arrow-down-motion-1 {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+  25%,
+  75% {
+    transform: translateY(1.5px);
+  }
+}

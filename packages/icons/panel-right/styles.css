@@ -1,0 +1,30 @@
+.ai-panel-right-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-panel-right-icon * {
+  transform-box: fill-box;
+}
+
+.ai-panel-right-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-panel-right-icon .dash {
+  transform-origin: center;
+}
+
+.ai-panel-right-icon:not(.no-hover):hover .dash {
+  animation: ai-panel-right-slide 700ms ease-in-out;
+}
+
+@keyframes ai-panel-right-slide {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(1px); }
+}

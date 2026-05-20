@@ -1,0 +1,31 @@
+.ai-gear-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-gear-icon * {
+  transform-box: fill-box;
+}
+
+.ai-gear-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-gear-icon .gear {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-gear-icon:not(.no-hover):hover .gear {
+  animation: ai-gear-spin 700ms ease-in-out;
+}
+
+@keyframes ai-gear-spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}

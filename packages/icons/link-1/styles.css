@@ -1,0 +1,31 @@
+.ai-link-1-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-link-1-icon * {
+  transform-box: fill-box;
+}
+
+.ai-link-1-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-link-1-icon .dash {
+  transform-origin: center;
+}
+
+.ai-link-1-icon:not(.no-hover):hover .dash {
+  animation: ai-link-1-slide 700ms ease-in-out;
+}
+
+@keyframes ai-link-1-slide {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-1px); }
+  75% { transform: translateX(1px); }
+}

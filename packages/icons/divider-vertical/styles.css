@@ -1,0 +1,31 @@
+.ai-divider-vertical-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-divider-vertical-icon * {
+  transform-box: fill-box;
+}
+
+.ai-divider-vertical-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-divider-vertical-icon .line {
+  stroke-dasharray: 10;
+}
+
+.ai-divider-vertical-icon:not(.no-hover):hover .line {
+  animation: ai-divider-vertical-redraw 700ms ease-in-out;
+}
+
+@keyframes ai-divider-vertical-redraw {
+  0% { stroke-dashoffset: 0; }
+  50% { stroke-dashoffset: -10; }
+  100% { stroke-dashoffset: -20; }
+}

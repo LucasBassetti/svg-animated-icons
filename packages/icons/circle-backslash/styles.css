@@ -1,0 +1,35 @@
+.ai-circle-backslash-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-circle-backslash-icon * {
+  transform-box: fill-box;
+}
+
+.ai-circle-backslash-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-circle-backslash-icon .slash {
+  stroke-dasharray: 13;
+  stroke-dashoffset: 13;
+}
+
+.ai-circle-backslash-icon:not(.no-hover):hover .slash {
+  animation: ai-circle-backslash-draw 700ms ease-out forwards;
+}
+
+.ai-circle-backslash-icon:not(:hover) .slash {
+  stroke-dashoffset: 0;
+}
+
+@keyframes ai-circle-backslash-draw {
+  from { stroke-dashoffset: 13; }
+  to { stroke-dashoffset: 0; }
+}

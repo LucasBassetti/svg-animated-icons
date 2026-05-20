@@ -1,0 +1,34 @@
+.ai-border-right-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-border-right-icon * {
+  transform-box: fill-box;
+}
+
+.ai-border-right-icon .right {
+  stroke-dasharray: 13;
+}
+
+.ai-border-right-icon:not(.no-hover):hover .right {
+  animation: ai-border-right-draw 700ms ease-out;
+}
+
+.ai-border-right-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-border-right-draw {
+  from {
+    stroke-dashoffset: 13;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

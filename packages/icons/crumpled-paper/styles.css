@@ -1,0 +1,32 @@
+.ai-crumpled-paper-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-crumpled-paper-icon * {
+  transform-box: fill-box;
+}
+
+.ai-crumpled-paper-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-crumpled-paper-icon .paper {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-crumpled-paper-icon:not(.no-hover):hover .paper {
+  animation: ai-crumpled-paper-jiggle 700ms ease-in-out;
+}
+
+@keyframes ai-crumpled-paper-jiggle {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-6deg); }
+  75% { transform: rotate(6deg); }
+}

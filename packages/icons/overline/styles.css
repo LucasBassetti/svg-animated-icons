@@ -1,0 +1,30 @@
+.ai-overline-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-overline-icon * {
+  transform-box: fill-box;
+}
+
+.ai-overline-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-overline-icon .line {
+  transform-origin: center;
+}
+
+.ai-overline-icon:not(.no-hover):hover .line {
+  animation: ai-overline-pulse 700ms ease-in-out;
+}
+
+@keyframes ai-overline-pulse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1px); }
+}

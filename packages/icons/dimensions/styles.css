@@ -1,0 +1,40 @@
+.ai-dimensions-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-dimensions-icon * {
+  transform-box: fill-box;
+}
+
+.ai-dimensions-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-dimensions-icon .arrow-h,
+.ai-dimensions-icon .arrow-v {
+  transform-origin: center;
+}
+
+.ai-dimensions-icon:not(.no-hover):hover .arrow-h {
+  animation: ai-dimensions-h 700ms ease-in-out;
+}
+
+.ai-dimensions-icon:not(.no-hover):hover .arrow-v {
+  animation: ai-dimensions-v 700ms ease-in-out;
+}
+
+@keyframes ai-dimensions-h {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(1.12); }
+}
+
+@keyframes ai-dimensions-v {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.12); }
+}

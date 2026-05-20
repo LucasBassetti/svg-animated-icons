@@ -1,0 +1,40 @@
+.ai-space-between-horizontally-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-space-between-horizontally-icon * {
+  transform-box: fill-box;
+}
+
+.ai-space-between-horizontally-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-space-between-horizontally-icon .left,
+.ai-space-between-horizontally-icon .right {
+  transform-origin: center;
+}
+
+.ai-space-between-horizontally-icon:not(.no-hover):hover .left {
+  animation: ai-space-between-horizontally-spread-left 700ms ease-in-out;
+}
+
+.ai-space-between-horizontally-icon:not(.no-hover):hover .right {
+  animation: ai-space-between-horizontally-spread-right 700ms ease-in-out;
+}
+
+@keyframes ai-space-between-horizontally-spread-left {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-1px); }
+}
+
+@keyframes ai-space-between-horizontally-spread-right {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(1px); }
+}

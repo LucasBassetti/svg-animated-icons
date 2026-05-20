@@ -1,0 +1,35 @@
+.ai-check-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-check-icon * {
+  transform-box: fill-box;
+}
+
+.ai-check-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-check-icon .check {
+  stroke-dasharray: 13;
+  stroke-dashoffset: 13;
+}
+
+.ai-check-icon:not(.no-hover):hover .check {
+  animation: ai-check-draw 700ms ease-out forwards;
+}
+
+.ai-check-icon:not(:hover) .check {
+  stroke-dashoffset: 0;
+}
+
+@keyframes ai-check-draw {
+  from { stroke-dashoffset: 13; }
+  to { stroke-dashoffset: 0; }
+}

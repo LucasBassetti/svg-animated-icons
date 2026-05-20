@@ -1,0 +1,30 @@
+.ai-text-align-top-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-text-align-top-icon * {
+  transform-box: fill-box;
+}
+
+.ai-text-align-top-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-text-align-top-icon .arrow {
+  transform-origin: center;
+}
+
+.ai-text-align-top-icon:not(.no-hover):hover .arrow {
+  animation: ai-text-align-top-push 700ms ease-in-out;
+}
+
+@keyframes ai-text-align-top-push {
+  0%, 50%, 100% { transform: translateY(0); }
+  25%, 75% { transform: translateY(-1px); }
+}

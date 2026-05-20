@@ -1,0 +1,35 @@
+.ai-align-horizontal-centers-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-align-horizontal-centers-icon * {
+  transform-box: fill-box;
+}
+
+.ai-align-horizontal-centers-icon:not(.no-hover):hover .left-block,
+.ai-align-horizontal-centers-icon:not(.no-hover):hover .right-block {
+  animation: ai-align-horizontal-centers-motion 700ms ease-in-out;
+}
+
+.ai-align-horizontal-centers-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-align-horizontal-centers-motion {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  33% {
+    transform: translateY(-1.25px);
+  }
+  66% {
+    transform: translateY(1.25px);
+  }
+}

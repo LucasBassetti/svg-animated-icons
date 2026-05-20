@@ -1,0 +1,31 @@
+.ai-shadow-inner-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-shadow-inner-icon * {
+  transform-box: fill-box;
+}
+
+.ai-shadow-inner-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-shadow-inner-icon .shadow {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-shadow-inner-icon:not(.no-hover):hover .shadow {
+  animation: ai-shadow-inner-sweep 700ms linear;
+}
+
+@keyframes ai-shadow-inner-sweep {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}

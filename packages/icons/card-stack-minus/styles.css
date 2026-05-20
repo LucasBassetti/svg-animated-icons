@@ -1,0 +1,35 @@
+.ai-card-stack-minus-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-card-stack-minus-icon * {
+  transform-box: fill-box;
+}
+
+.ai-card-stack-minus-icon .minus {
+  transform-origin: center;
+}
+
+.ai-card-stack-minus-icon:not(.no-hover):hover .minus {
+  animation: ai-card-stack-minus-motion-1 700ms ease-in-out;
+}
+
+.ai-card-stack-minus-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-card-stack-minus-motion-1 {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}

@@ -1,0 +1,31 @@
+.ai-margin-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-margin-icon * {
+  transform-box: fill-box;
+}
+
+.ai-margin-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-margin-icon .rect {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-margin-icon:not(.no-hover):hover .rect {
+  animation: ai-margin-shrink 700ms ease-in-out;
+}
+
+@keyframes ai-margin-shrink {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.82); }
+}

@@ -1,0 +1,33 @@
+.ai-crop-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-crop-icon * {
+  transform-box: fill-box;
+}
+
+.ai-crop-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-crop-icon .bracket-tl,
+.ai-crop-icon .bracket-br {
+  transform-origin: center;
+}
+
+.ai-crop-icon:not(.no-hover):hover .bracket-tl {
+  animation: ai-crop-tl 700ms ease-in-out;
+}
+
+.ai-crop-icon:not(.no-hover):hover .bracket-br {
+  animation: ai-crop-br 700ms ease-in-out;
+}
+
+@keyframes ai-crop-tl { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-1.25px, -1.25px); } }
+@keyframes ai-crop-br { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(1.25px, 1.25px); } }

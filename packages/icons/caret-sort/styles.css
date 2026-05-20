@@ -1,0 +1,40 @@
+.ai-caret-sort-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-caret-sort-icon * {
+  transform-box: fill-box;
+}
+
+.ai-caret-sort-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-caret-sort-icon .caret-up,
+.ai-caret-sort-icon .caret-down {
+  transform-origin: center;
+}
+
+.ai-caret-sort-icon:not(.no-hover):hover .caret-up {
+  animation: ai-caret-sort-up 700ms ease-in-out;
+}
+
+.ai-caret-sort-icon:not(.no-hover):hover .caret-down {
+  animation: ai-caret-sort-down 700ms ease-in-out;
+}
+
+@keyframes ai-caret-sort-up {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1.25px); }
+}
+
+@keyframes ai-caret-sort-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(1.25px); }
+}

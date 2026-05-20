@@ -1,0 +1,41 @@
+.ai-scissors-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-scissors-icon * {
+  transform-box: fill-box;
+}
+
+.ai-scissors-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-scissors-icon .top,
+.ai-scissors-icon .bottom {
+  transform-box: view-box;
+  transform-origin: 6.5px 7.5px;
+}
+
+.ai-scissors-icon:not(.no-hover):hover .bottom {
+  animation: ai-scissors-close-bottom 700ms ease-in-out;
+}
+
+.ai-scissors-icon:not(.no-hover):hover .top {
+  animation: ai-scissors-close-top 700ms ease-in-out;
+}
+
+@keyframes ai-scissors-close-bottom {
+  0%, 100% { transform: rotate(0); }
+  50% { transform: rotate(18deg); }
+}
+
+@keyframes ai-scissors-close-top {
+  0%, 100% { transform: rotate(0); }
+  50% { transform: rotate(-18deg); }
+}

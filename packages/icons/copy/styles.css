@@ -1,0 +1,28 @@
+.ai-copy-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-copy-icon * {
+  transform-box: fill-box;
+}
+
+.ai-copy-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-copy-icon .front { transform-origin: center; }
+
+.ai-copy-icon:not(.no-hover):hover .front {
+  animation: ai-copy-shift 700ms ease-in-out;
+}
+
+@keyframes ai-copy-shift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-4px, -4px); }
+}

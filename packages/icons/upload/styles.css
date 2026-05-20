@@ -1,0 +1,30 @@
+.ai-upload-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-upload-icon * {
+  transform-box: fill-box;
+}
+
+.ai-upload-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-upload-icon .arrow {
+  transform-origin: center;
+}
+
+.ai-upload-icon:not(.no-hover):hover .arrow {
+  animation: ai-upload-launch 700ms ease-in-out;
+}
+
+@keyframes ai-upload-launch {
+  0%, 50%, 100% { transform: translateY(0); }
+  25%, 75% { transform: translateY(-1.5px); }
+}

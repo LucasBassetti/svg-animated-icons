@@ -1,0 +1,31 @@
+.ai-update-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-update-icon * {
+  transform-box: fill-box;
+}
+
+.ai-update-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-update-icon .loop {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-update-icon:not(.no-hover):hover .loop {
+  animation: ai-update-spin 700ms ease-in-out;
+}
+
+@keyframes ai-update-spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}

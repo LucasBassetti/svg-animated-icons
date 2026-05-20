@@ -1,0 +1,31 @@
+.ai-zoom-out-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-zoom-out-icon * {
+  transform-box: fill-box;
+}
+
+.ai-zoom-out-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-zoom-out-icon .minus {
+  transform-box: view-box;
+  transform-origin: 6.5px 6.5px;
+}
+
+.ai-zoom-out-icon:not(.no-hover):hover .minus {
+  animation: ai-zoom-out-shrink 700ms ease-in-out;
+}
+
+@keyframes ai-zoom-out-shrink {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(0.55); }
+}

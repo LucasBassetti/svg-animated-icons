@@ -1,0 +1,30 @@
+.ai-caret-right-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-caret-right-icon * {
+  transform-box: fill-box;
+}
+
+.ai-caret-right-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-caret-right-icon .caret {
+  transform-origin: center;
+}
+
+.ai-caret-right-icon:not(.no-hover):hover .caret {
+  animation: ai-caret-right-motion 700ms ease-in-out;
+}
+
+@keyframes ai-caret-right-motion {
+  0%, 50%, 100% { transform: translate(0, 0); }
+  25%, 75% { transform: translateX(1.5px); }
+}
