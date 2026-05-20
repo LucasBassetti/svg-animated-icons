@@ -1,0 +1,40 @@
+.ai-layers-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-layers-icon * {
+  transform-box: fill-box;
+}
+
+.ai-layers-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-layers-icon .top,
+.ai-layers-icon .middle {
+  transform-origin: center;
+}
+
+.ai-layers-icon:not(.no-hover):hover .top {
+  animation: ai-layers-stack-top 700ms ease-in-out;
+}
+
+.ai-layers-icon:not(.no-hover):hover .middle {
+  animation: ai-layers-stack-middle 700ms ease-in-out;
+}
+
+@keyframes ai-layers-stack-top {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(7px); }
+}
+
+@keyframes ai-layers-stack-middle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}

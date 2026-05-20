@@ -1,0 +1,46 @@
+.ai-mix-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-mix-icon * {
+  transform-box: fill-box;
+}
+
+.ai-mix-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-mix-icon .circle,
+.ai-mix-icon .cross,
+.ai-mix-icon .triangle,
+.ai-mix-icon .square {
+  transform-origin: center;
+}
+
+.ai-mix-icon:not(.no-hover):hover .cross,
+.ai-mix-icon:not(.no-hover):hover .triangle,
+.ai-mix-icon:not(.no-hover):hover .square {
+  animation: ai-mix-spin 700ms ease-in-out;
+}
+
+.ai-mix-icon:not(.no-hover):hover .circle {
+  animation: ai-mix-flip 700ms ease-in-out;
+}
+
+@keyframes ai-mix-spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ai-mix-flip {
+  0%, 100% { transform: scaleX(1); }
+  25% { transform: scaleX(0); }
+  50% { transform: scaleX(-1); }
+  75% { transform: scaleX(0); }
+}

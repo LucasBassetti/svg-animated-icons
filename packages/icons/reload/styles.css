@@ -1,0 +1,31 @@
+.ai-reload-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-reload-icon * {
+  transform-box: fill-box;
+}
+
+.ai-reload-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-reload-icon .arrow {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-reload-icon:not(.no-hover):hover .arrow {
+  animation: ai-reload-spin 700ms linear;
+}
+
+@keyframes ai-reload-spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}

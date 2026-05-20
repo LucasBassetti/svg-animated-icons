@@ -1,0 +1,31 @@
+.ai-stretch-vertically-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-stretch-vertically-icon * {
+  transform-box: fill-box;
+}
+
+.ai-stretch-vertically-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-stretch-vertically-icon .shape {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-stretch-vertically-icon:not(.no-hover):hover .shape {
+  animation: ai-stretch-vertically-stretch 700ms ease-in-out;
+}
+
+@keyframes ai-stretch-vertically-stretch {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.1); }
+}

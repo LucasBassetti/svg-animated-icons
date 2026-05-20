@@ -1,0 +1,28 @@
+.ai-eye-closed-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-eye-closed-icon * {
+  transform-box: fill-box;
+}
+
+.ai-eye-closed-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-eye-closed-icon .eye { transform-origin: center; }
+
+.ai-eye-closed-icon:not(.no-hover):hover .eye {
+  animation: ai-eye-closed-motion 700ms ease-in-out;
+}
+
+@keyframes ai-eye-closed-motion {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(1px); }
+}

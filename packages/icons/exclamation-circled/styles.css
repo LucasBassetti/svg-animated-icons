@@ -1,0 +1,32 @@
+.ai-exclamation-circled-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-exclamation-circled-icon * {
+  transform-box: fill-box;
+}
+
+.ai-exclamation-circled-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-exclamation-circled-icon .excl {
+  transform-origin: center;
+}
+
+.ai-exclamation-circled-icon:not(.no-hover):hover .excl {
+  animation: ai-exclamation-circled-motion 700ms ease-in-out;
+}
+
+@keyframes ai-exclamation-circled-motion {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-1px); }
+  50% { transform: translateY(0); }
+  75% { transform: translateY(-1px); }
+}

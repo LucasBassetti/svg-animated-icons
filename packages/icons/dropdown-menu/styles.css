@@ -1,0 +1,28 @@
+.ai-dropdown-menu-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-dropdown-menu-icon * {
+  transform-box: fill-box;
+}
+
+.ai-dropdown-menu-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-dropdown-menu-icon .caret { transform-origin: center; }
+
+.ai-dropdown-menu-icon:not(.no-hover):hover .caret {
+  animation: ai-dropdown-menu-bob 700ms ease-in-out;
+}
+
+@keyframes ai-dropdown-menu-bob {
+  0%, 50%, 100% { transform: translateY(0); }
+  25%, 75% { transform: translateY(1.5px); }
+}

@@ -1,0 +1,30 @@
+.ai-pin-right-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-pin-right-icon * {
+  transform-box: fill-box;
+}
+
+.ai-pin-right-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-pin-right-icon .arrow {
+  transform-origin: center;
+}
+
+.ai-pin-right-icon:not(.no-hover):hover .arrow {
+  animation: ai-pin-right-push 700ms ease-in-out;
+}
+
+@keyframes ai-pin-right-push {
+  0%, 50%, 100% { transform: translateX(0); }
+  25%, 75% { transform: translateX(1px); }
+}

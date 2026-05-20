@@ -1,0 +1,30 @@
+.ai-clipboard-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-clipboard-icon * {
+  transform-box: fill-box;
+}
+
+.ai-clipboard-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-clipboard-icon .clip {
+  transform-origin: center;
+}
+
+.ai-clipboard-icon:not(.no-hover):hover .clip {
+  animation: ai-clipboard-click 700ms ease-in-out;
+}
+
+@keyframes ai-clipboard-click {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(1px); }
+}

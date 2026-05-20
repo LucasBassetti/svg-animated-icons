@@ -1,0 +1,31 @@
+.ai-instagram-logo-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-instagram-logo-icon * {
+  transform-box: fill-box;
+}
+
+.ai-instagram-logo-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-instagram-logo-icon .logo {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-instagram-logo-icon:not(.no-hover):hover .logo {
+  animation: ai-instagram-logo-spin 700ms ease-in-out;
+}
+
+@keyframes ai-instagram-logo-spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}

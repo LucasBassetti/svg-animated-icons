@@ -1,0 +1,30 @@
+.ai-paper-plane-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-paper-plane-icon * {
+  transform-box: fill-box;
+}
+
+.ai-paper-plane-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-paper-plane-icon .plane {
+  transform-origin: center;
+}
+
+.ai-paper-plane-icon:not(.no-hover):hover .plane {
+  animation: ai-paper-plane-fly 700ms ease-in-out;
+}
+
+@keyframes ai-paper-plane-fly {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(1.2px, -1.2px); }
+}

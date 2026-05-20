@@ -1,0 +1,29 @@
+.ai-crosshair-1-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-crosshair-1-icon * {
+  transform-box: fill-box;
+}
+
+.ai-crosshair-1-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-crosshair-1-icon .tick { transform-origin: center; }
+
+.ai-crosshair-1-icon:not(.no-hover):hover .tick-top { animation: ai-crosshair-1-top 700ms ease-in-out; }
+.ai-crosshair-1-icon:not(.no-hover):hover .tick-right { animation: ai-crosshair-1-right 700ms ease-in-out; }
+.ai-crosshair-1-icon:not(.no-hover):hover .tick-bottom { animation: ai-crosshair-1-bottom 700ms ease-in-out; }
+.ai-crosshair-1-icon:not(.no-hover):hover .tick-left { animation: ai-crosshair-1-left 700ms ease-in-out; }
+
+@keyframes ai-crosshair-1-top { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-1.25px); } }
+@keyframes ai-crosshair-1-right { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(1.25px); } }
+@keyframes ai-crosshair-1-bottom { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(1.25px); } }
+@keyframes ai-crosshair-1-left { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-1.25px); } }

@@ -1,0 +1,31 @@
+.ai-laptop-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-laptop-icon * {
+  transform-box: fill-box;
+}
+
+.ai-laptop-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-laptop-icon .screen {
+  transform-box: view-box;
+  transform-origin: 7.5px 12px;
+}
+
+.ai-laptop-icon:not(.no-hover):hover .screen {
+  animation: ai-laptop-fold 700ms ease-in-out;
+}
+
+@keyframes ai-laptop-fold {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0); }
+}

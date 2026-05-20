@@ -1,0 +1,35 @@
+.ai-mobile-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-mobile-icon * {
+  transform-box: fill-box;
+}
+
+.ai-mobile-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-mobile-icon .phone {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-mobile-icon:not(.no-hover):hover .phone {
+  animation: ai-mobile-buzz 700ms ease-in-out;
+}
+
+@keyframes ai-mobile-buzz {
+  0%, 100% { transform: rotate(0); }
+  15% { transform: rotate(-4deg); }
+  30% { transform: rotate(4deg); }
+  45% { transform: rotate(-3deg); }
+  60% { transform: rotate(3deg); }
+  80% { transform: rotate(-1deg); }
+}

@@ -1,0 +1,5 @@
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path class="bell" d="M7.5 2.5C5.57 2.5 4 4.07 4 6V9.5C4 10.6 3.7 11.3 3.3 11.8H11.7C11.3 11.3 11 10.6 11 9.5V6C11 4.07 9.43 2.5 7.5 2.5Z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+  <path class="top" d="M7.5 2.5V1.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+  <path class="clapper" d="M6.5 12.5C6.5 13.05 6.95 13.5 7.5 13.5C8.05 13.5 8.5 13.05 8.5 12.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

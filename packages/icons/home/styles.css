@@ -1,0 +1,30 @@
+.ai-home-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-home-icon * {
+  transform-box: fill-box;
+}
+
+.ai-home-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-home-icon .roof {
+  transform-origin: center;
+}
+
+.ai-home-icon:not(.no-hover):hover .roof {
+  animation: ai-home-lift 700ms ease-in-out;
+}
+
+@keyframes ai-home-lift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-0.8px); }
+}

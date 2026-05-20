@@ -1,0 +1,84 @@
+.ai-all-sides-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-all-sides-icon * {
+  transform-box: fill-box;
+  transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 220ms ease;
+}
+
+.ai-all-sides-icon .top,
+.ai-all-sides-icon .right,
+.ai-all-sides-icon .bottom,
+.ai-all-sides-icon .left {
+  transform-origin: center;
+}
+
+.ai-all-sides-icon:not(.no-hover):hover .top {
+  animation: ai-all-sides-motion-1 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ai-all-sides-icon:not(.no-hover):hover .right {
+  animation: ai-all-sides-motion-2 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation-delay: 35ms;
+}
+
+.ai-all-sides-icon:not(.no-hover):hover .bottom {
+  animation: ai-all-sides-motion-3 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation-delay: 70ms;
+}
+
+.ai-all-sides-icon:not(.no-hover):hover .left {
+  animation: ai-all-sides-motion-4 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation-delay: 105ms;
+}
+
+.ai-all-sides-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-all-sides-motion-1 {
+  0%,
+  100% {
+    transform: none;
+  }
+  52% {
+    transform: translateY(-0.8px);
+  }
+}
+
+@keyframes ai-all-sides-motion-2 {
+  0%,
+  100% {
+    transform: none;
+  }
+  52% {
+    transform: translateX(0.8px);
+  }
+}
+
+@keyframes ai-all-sides-motion-3 {
+  0%,
+  100% {
+    transform: none;
+  }
+  52% {
+    transform: translateY(0.8px);
+  }
+}
+
+@keyframes ai-all-sides-motion-4 {
+  0%,
+  100% {
+    transform: none;
+  }
+  52% {
+    transform: translateX(-0.8px);
+  }
+}

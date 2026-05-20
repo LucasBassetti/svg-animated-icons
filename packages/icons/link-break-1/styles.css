@@ -1,0 +1,31 @@
+.ai-link-break-1-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-link-break-1-icon * {
+  transform-box: fill-box;
+}
+
+.ai-link-break-1-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-link-break-1-icon .dash {
+  transform-origin: center;
+  clip-path: inset(0);
+}
+
+.ai-link-break-1-icon:not(.no-hover):hover .dash {
+  animation: ai-link-break-1-cross 700ms ease-in-out;
+}
+
+@keyframes ai-link-break-1-cross {
+  0% { clip-path: inset(0 0 100% 0); }
+  100% { clip-path: inset(0); }
+}

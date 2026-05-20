@@ -1,0 +1,40 @@
+.ai-link-break-2-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-link-break-2-icon * {
+  transform-box: fill-box;
+}
+
+.ai-link-break-2-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-link-break-2-icon .left,
+.ai-link-break-2-icon .right {
+  transform-origin: center;
+}
+
+.ai-link-break-2-icon:not(.no-hover):hover .left {
+  animation: ai-link-break-2-pull-left 700ms ease-in-out;
+}
+
+.ai-link-break-2-icon:not(.no-hover):hover .right {
+  animation: ai-link-break-2-pull-right 700ms ease-in-out;
+}
+
+@keyframes ai-link-break-2-pull-left {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-0.7px, 0.7px); }
+}
+
+@keyframes ai-link-break-2-pull-right {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(0.7px, -0.7px); }
+}

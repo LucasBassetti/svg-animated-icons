@@ -1,0 +1,31 @@
+.ai-height-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-height-icon * {
+  transform-box: fill-box;
+}
+
+.ai-height-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-height-icon .arrow {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-height-icon:not(.no-hover):hover .arrow {
+  animation: ai-height-stretch 700ms ease-in-out;
+}
+
+@keyframes ai-height-stretch {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.2); }
+}

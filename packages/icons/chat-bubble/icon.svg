@@ -1,0 +1,6 @@
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path class="bubble" d="M2 4.5C2 3.4 2.9 2.5 4 2.5H11C12.1 2.5 13 3.4 13 4.5V9C13 10.1 12.1 11 11 11H7L4.5 13V11H4C2.9 11 2 10.1 2 9V4.5Z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+  <circle class="dot dot-1" cx="5.5" cy="6.75" r="0.7" fill="currentColor"/>
+  <circle class="dot dot-2" cx="7.5" cy="6.75" r="0.7" fill="currentColor"/>
+  <circle class="dot dot-3" cx="9.5" cy="6.75" r="0.7" fill="currentColor"/>
+</svg>

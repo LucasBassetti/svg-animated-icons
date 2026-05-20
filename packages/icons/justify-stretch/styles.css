@@ -1,0 +1,31 @@
+.ai-justify-stretch-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-justify-stretch-icon * {
+  transform-box: fill-box;
+}
+
+.ai-justify-stretch-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-justify-stretch-icon .pill {
+  transform-origin: center;
+}
+
+.ai-justify-stretch-icon:not(.no-hover):hover .pill {
+  animation: ai-justify-stretch-rock 700ms ease-in-out;
+}
+
+@keyframes ai-justify-stretch-rock {
+  0%, 100% { transform: translateX(0); }
+  30% { transform: translateX(-0.8px); }
+  70% { transform: translateX(0.8px); }
+}

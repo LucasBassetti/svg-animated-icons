@@ -1,0 +1,11 @@
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g class="disk-top">
+    <path d="M2.5 4.5V8M12.5 4.5V8" stroke="currentColor" stroke-width="1"/>
+    <path d="M2.5 4.5C2.5 5.6 4.74 6.5 7.5 6.5C10.26 6.5 12.5 5.6 12.5 4.5C12.5 3.4 10.26 2.5 7.5 2.5C4.74 2.5 2.5 3.4 2.5 4.5Z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+    <path d="M2.5 8C2.5 9.1 4.74 10 7.5 10C10.26 10 12.5 9.1 12.5 8" stroke="currentColor" stroke-width="1"/>
+  </g>
+  <g class="disk-bottom">
+    <path d="M2.5 8V11.5M12.5 8V11.5" stroke="currentColor" stroke-width="1"/>
+    <path d="M2.5 11.5C2.5 12.6 4.74 13.5 7.5 13.5C10.26 13.5 12.5 12.6 12.5 11.5" stroke="currentColor" stroke-width="1"/>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+.ai-hamburger-menu-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-hamburger-menu-icon * {
+  transform-box: fill-box;
+}
+
+.ai-hamburger-menu-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-hamburger-menu-icon .line { transform-origin: center; }
+
+.ai-hamburger-menu-icon:not(.no-hover):hover .line-1 {
+  animation: ai-hamburger-menu-top 700ms ease-in-out;
+}
+
+.ai-hamburger-menu-icon:not(.no-hover):hover .line-3 {
+  animation: ai-hamburger-menu-bottom 700ms ease-in-out;
+}
+
+@keyframes ai-hamburger-menu-top {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(1.5px); }
+}
+
+@keyframes ai-hamburger-menu-bottom {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1.5px); }
+}

@@ -1,0 +1,31 @@
+.ai-ruler-horizontal-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-ruler-horizontal-icon * {
+  transform-box: fill-box;
+}
+
+.ai-ruler-horizontal-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-ruler-horizontal-icon .ruler {
+  transform-origin: center;
+}
+
+.ai-ruler-horizontal-icon:not(.no-hover):hover .ruler {
+  animation: ai-ruler-horizontal-measure 700ms ease-in-out;
+}
+
+@keyframes ai-ruler-horizontal-measure {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-1px); }
+  75% { transform: translateX(1px); }
+}

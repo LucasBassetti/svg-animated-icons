@@ -1,0 +1,31 @@
+.ai-heading-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-heading-icon * {
+  transform-box: fill-box;
+}
+
+.ai-heading-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-heading-icon .heading {
+  transform-origin: center;
+}
+
+.ai-heading-icon:not(.no-hover):hover .heading {
+  animation: ai-heading-emphasis 700ms ease-in-out;
+}
+
+@keyframes ai-heading-emphasis {
+  0%, 100% { transform: translateY(0); }
+  25%, 75% { transform: translateY(-0.7px); }
+  50% { transform: translateY(0); }
+}

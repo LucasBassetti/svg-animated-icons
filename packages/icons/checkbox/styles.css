@@ -1,0 +1,35 @@
+.ai-checkbox-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-checkbox-icon * {
+  transform-box: fill-box;
+}
+
+.ai-checkbox-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-checkbox-icon .check {
+  stroke-dasharray: 10;
+  stroke-dashoffset: 10;
+}
+
+.ai-checkbox-icon:not(.no-hover):hover .check {
+  animation: ai-checkbox-draw 700ms ease-out forwards;
+}
+
+.ai-checkbox-icon:not(:hover) .check {
+  stroke-dashoffset: 0;
+}
+
+@keyframes ai-checkbox-draw {
+  from { stroke-dashoffset: 10; }
+  to { stroke-dashoffset: 0; }
+}

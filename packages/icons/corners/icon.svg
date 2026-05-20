@@ -1,0 +1,6 @@
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path class="corner corner-tl" d="M5.5 3H4C3.4 3 3 3.4 3 4V5.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="corner corner-tr" d="M9.5 3H11C11.6 3 12 3.4 12 4V5.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="corner corner-bl" d="M5.5 12H4C3.4 12 3 11.6 3 11V9.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="corner corner-br" d="M9.5 12H11C11.6 12 12 11.6 12 11V9.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,40 @@
+.ai-text-align-left-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-text-align-left-icon * {
+  transform-box: fill-box;
+}
+
+.ai-text-align-left-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-text-align-left-icon .line-1,
+.ai-text-align-left-icon .line-2,
+.ai-text-align-left-icon .line-3 {
+  transform-origin: left center;
+}
+
+.ai-text-align-left-icon:not(.no-hover):hover .line-1 {
+  animation: ai-text-align-left-pulse 700ms ease-in-out;
+}
+
+.ai-text-align-left-icon:not(.no-hover):hover .line-2 {
+  animation: ai-text-align-left-pulse 700ms ease-in-out 100ms;
+}
+
+.ai-text-align-left-icon:not(.no-hover):hover .line-3 {
+  animation: ai-text-align-left-pulse 700ms ease-in-out 200ms;
+}
+
+@keyframes ai-text-align-left-pulse {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(0.92); }
+}

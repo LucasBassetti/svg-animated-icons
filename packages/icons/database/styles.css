@@ -1,0 +1,30 @@
+.ai-database-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-database-icon * {
+  transform-box: fill-box;
+}
+
+.ai-database-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-database-icon .disk-top {
+  transform-origin: center;
+}
+
+.ai-database-icon:not(.no-hover):hover .disk-top {
+  animation: ai-database-merge 700ms ease-in-out;
+}
+
+@keyframes ai-database-merge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3.5px); }
+}

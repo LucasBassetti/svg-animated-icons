@@ -1,0 +1,28 @@
+.ai-cursor-arrow-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-cursor-arrow-icon * {
+  transform-box: fill-box;
+}
+
+.ai-cursor-arrow-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-cursor-arrow-icon .arrow { transform-origin: center; }
+
+.ai-cursor-arrow-icon:not(.no-hover):hover .arrow {
+  animation: ai-cursor-arrow-click 700ms ease-in-out;
+}
+
+@keyframes ai-cursor-arrow-click {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(1.5px, 1.5px); }
+}

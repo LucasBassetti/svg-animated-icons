@@ -1,0 +1,33 @@
+.ai-lightning-bolt-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-lightning-bolt-icon * {
+  transform-box: fill-box;
+}
+
+.ai-lightning-bolt-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-lightning-bolt-icon .bolt {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-lightning-bolt-icon:not(.no-hover):hover .bolt {
+  animation: ai-lightning-bolt-strike 700ms ease-in-out;
+}
+
+@keyframes ai-lightning-bolt-strike {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-8deg); }
+  50% { transform: rotate(0); }
+  75% { transform: rotate(8deg); }
+}

@@ -1,0 +1,35 @@
+.ai-blending-mode-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-blending-mode-icon * {
+  transform-box: fill-box;
+}
+
+.ai-blending-mode-icon .highlight {
+  transform-origin: center;
+}
+
+.ai-blending-mode-icon:not(.no-hover):hover .highlight {
+  animation: ai-blending-mode-glide 700ms ease-in-out;
+}
+
+.ai-blending-mode-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-blending-mode-glide {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(200%) rotate(-90deg);
+  }
+}

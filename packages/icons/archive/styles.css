@@ -1,0 +1,71 @@
+.ai-archive-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-archive-icon * {
+  transform-box: fill-box;
+  transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 220ms ease;
+}
+
+.ai-archive-icon .lid {
+  transform-origin: center bottom;
+}
+.ai-archive-icon .box {
+  transform-origin: center bottom;
+}
+.ai-archive-icon .handle {
+  transform-origin: center;
+}
+
+.ai-archive-icon:not(.no-hover):hover .lid {
+  animation: ai-archive-motion-1 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ai-archive-icon:not(.no-hover):hover .box {
+  animation: ai-archive-motion-2 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ai-archive-icon:not(.no-hover):hover .handle {
+  animation: ai-archive-motion-3 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation-delay: 60ms;
+}
+
+.ai-archive-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-archive-motion-1 {
+  0%,
+  100% {
+    transform: none;
+  }
+  52% {
+    transform: translateY(-0.8px) rotate(-3deg);
+  }
+}
+
+@keyframes ai-archive-motion-2 {
+  0%,
+  100% {
+    transform: none;
+  }
+  52% {
+    transform: translateY(0.35px);
+  }
+}
+
+@keyframes ai-archive-motion-3 {
+  0%,
+  100% {
+    transform: none;
+  }
+  52% {
+    transform: scaleX(0.72);
+  }
+}

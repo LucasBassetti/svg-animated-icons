@@ -1,0 +1,35 @@
+.ai-server-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-server-icon * {
+  transform-box: fill-box;
+}
+
+.ai-server-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-server-icon .led-top,
+.ai-server-icon .led-bottom {
+  transform-origin: center;
+}
+
+.ai-server-icon:not(.no-hover):hover .led-top {
+  animation: ai-server-blink 700ms ease-in-out;
+}
+
+.ai-server-icon:not(.no-hover):hover .led-bottom {
+  animation: ai-server-blink 700ms ease-in-out 200ms;
+}
+
+@keyframes ai-server-blink {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.6); }
+}

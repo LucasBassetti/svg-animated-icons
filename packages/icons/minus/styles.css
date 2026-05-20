@@ -1,0 +1,30 @@
+.ai-minus-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-minus-icon * {
+  transform-box: fill-box;
+}
+
+.ai-minus-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-minus-icon .dash {
+  transform-origin: center;
+}
+
+.ai-minus-icon:not(.no-hover):hover .dash {
+  animation: ai-minus-stretch 700ms ease-in-out;
+}
+
+@keyframes ai-minus-stretch {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(1.18); }
+}

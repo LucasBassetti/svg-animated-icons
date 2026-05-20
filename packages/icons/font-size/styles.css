@@ -1,0 +1,40 @@
+.ai-font-size-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-font-size-icon * {
+  transform-box: fill-box;
+}
+
+.ai-font-size-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-font-size-icon .arrow,
+.ai-font-size-icon .letter-a {
+  transform-origin: center;
+}
+
+.ai-font-size-icon:not(.no-hover):hover .arrow {
+  animation: ai-font-size-arrow 700ms ease-in-out;
+}
+
+.ai-font-size-icon:not(.no-hover):hover .letter-a {
+  animation: ai-font-size-letter 700ms ease-in-out;
+}
+
+@keyframes ai-font-size-arrow {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.25); }
+}
+
+@keyframes ai-font-size-letter {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}

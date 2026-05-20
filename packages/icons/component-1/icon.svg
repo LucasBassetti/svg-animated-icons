@@ -1,0 +1,6 @@
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path class="diamond diamond-top" d="M7.5 1L10 3.5L7.5 6L5 3.5Z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+  <path class="diamond diamond-bottom" d="M7.5 9L10 11.5L7.5 14L5 11.5Z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+  <path class="diamond diamond-left" d="M1 7.5L3.5 5L6 7.5L3.5 10Z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+  <path class="diamond diamond-right" d="M9 7.5L11.5 5L14 7.5L11.5 10Z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+</svg>

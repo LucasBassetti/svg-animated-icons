@@ -1,0 +1,15 @@
+node_modules
+.pnpm-store
+dist
+.turbo
+.next
+*.tsbuildinfo
+.DS_Store
+*.log
+.env
+.env.local
+svg-icons
+
+# generated registry artifacts
+apps/docs/public/r/*.json
+apps/docs/lib/morph-engine.ts

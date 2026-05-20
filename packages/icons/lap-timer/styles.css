@@ -1,0 +1,31 @@
+.ai-lap-timer-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-lap-timer-icon * {
+  transform-box: fill-box;
+}
+
+.ai-lap-timer-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-lap-timer-icon .slice {
+  transform-box: view-box;
+  transform-origin: 7.5px 8.5px;
+}
+
+.ai-lap-timer-icon:not(.no-hover):hover .slice {
+  animation: ai-lap-timer-tick 700ms linear;
+}
+
+@keyframes ai-lap-timer-tick {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}

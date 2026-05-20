@@ -1,0 +1,39 @@
+.ai-view-grid-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-view-grid-icon * {
+  transform-box: fill-box;
+}
+
+.ai-view-grid-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-view-grid-icon .q {
+  transform-origin: center;
+}
+
+.ai-view-grid-icon:not(.no-hover):hover .tl {
+  animation: ai-view-grid-pulse 700ms ease-in-out 0ms;
+}
+.ai-view-grid-icon:not(.no-hover):hover .tr {
+  animation: ai-view-grid-pulse 700ms ease-in-out 80ms;
+}
+.ai-view-grid-icon:not(.no-hover):hover .br {
+  animation: ai-view-grid-pulse 700ms ease-in-out 160ms;
+}
+.ai-view-grid-icon:not(.no-hover):hover .bl {
+  animation: ai-view-grid-pulse 700ms ease-in-out 240ms;
+}
+
+@keyframes ai-view-grid-pulse {
+  0%, 100% { fill: black; }
+  50% { fill: #888; }
+}

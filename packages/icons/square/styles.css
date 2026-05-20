@@ -1,0 +1,31 @@
+.ai-square-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-square-icon * {
+  transform-box: fill-box;
+}
+
+.ai-square-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-square-icon .square {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-square-icon:not(.no-hover):hover .square {
+  animation: ai-square-spin 700ms ease-in-out;
+}
+
+@keyframes ai-square-spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(90deg); }
+}

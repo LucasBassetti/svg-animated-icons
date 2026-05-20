@@ -1,0 +1,33 @@
+.ai-switch-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-switch-icon * {
+  transform-box: fill-box;
+}
+
+.ai-switch-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-switch-icon .switch {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-switch-icon:not(.no-hover):hover .switch {
+  animation: ai-switch-toggle 700ms ease-in-out;
+}
+
+@keyframes ai-switch-toggle {
+  0%, 100% { transform: scaleX(1); }
+  25% { transform: scaleX(0); }
+  50% { transform: scaleX(-1); }
+  75% { transform: scaleX(0); }
+}

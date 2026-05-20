@@ -1,0 +1,37 @@
+.ai-arrow-top-left-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-arrow-top-left-icon * {
+  transform-box: fill-box;
+}
+
+.ai-arrow-top-left-icon .arrow {
+  transform-origin: center;
+}
+
+.ai-arrow-top-left-icon:not(.no-hover):hover .arrow {
+  animation: ai-arrow-top-left-motion-1 700ms ease-in-out;
+}
+
+.ai-arrow-top-left-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-arrow-top-left-motion-1 {
+  0%,
+  50%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25%,
+  75% {
+    transform: translate(-1.25px, -1.25px);
+  }
+}

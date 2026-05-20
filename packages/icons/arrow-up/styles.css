@@ -1,0 +1,37 @@
+.ai-arrow-up-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-arrow-up-icon * {
+  transform-box: fill-box;
+}
+
+.ai-arrow-up-icon .arrow {
+  transform-origin: center;
+}
+
+.ai-arrow-up-icon:not(.no-hover):hover .arrow {
+  animation: ai-arrow-up-motion-1 700ms ease-in-out;
+}
+
+.ai-arrow-up-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-arrow-up-motion-1 {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+  25%,
+  75% {
+    transform: translateY(-1.5px);
+  }
+}

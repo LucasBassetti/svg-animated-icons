@@ -1,0 +1,31 @@
+.ai-clock-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-clock-icon * {
+  transform-box: fill-box;
+}
+
+.ai-clock-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-clock-icon .minute {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-clock-icon:not(.no-hover):hover .minute {
+  animation: ai-clock-sweep 700ms ease-in-out;
+}
+
+@keyframes ai-clock-sweep {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,31 @@
+.ai-component-2-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-component-2-icon * {
+  transform-box: fill-box;
+}
+
+.ai-component-2-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-component-2-icon .grid {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-component-2-icon:not(.no-hover):hover .grid {
+  animation: ai-component-2-rotate 700ms ease-in-out;
+}
+
+@keyframes ai-component-2-rotate {
+  0%, 100% { transform: rotate(0); }
+  50% { transform: rotate(90deg); }
+}

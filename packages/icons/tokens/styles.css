@@ -1,0 +1,45 @@
+.ai-tokens-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-tokens-icon * {
+  transform-box: fill-box;
+}
+
+.ai-tokens-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-tokens-icon .tl,
+.ai-tokens-icon .tr,
+.ai-tokens-icon .bl,
+.ai-tokens-icon .br {
+  transform-origin: center;
+}
+
+.ai-tokens-icon:not(.no-hover):hover .tl {
+  animation: ai-tokens-pulse 700ms ease-in-out;
+}
+
+.ai-tokens-icon:not(.no-hover):hover .tr {
+  animation: ai-tokens-pulse 700ms ease-in-out 80ms;
+}
+
+.ai-tokens-icon:not(.no-hover):hover .br {
+  animation: ai-tokens-pulse 700ms ease-in-out 160ms;
+}
+
+.ai-tokens-icon:not(.no-hover):hover .bl {
+  animation: ai-tokens-pulse 700ms ease-in-out 240ms;
+}
+
+@keyframes ai-tokens-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}

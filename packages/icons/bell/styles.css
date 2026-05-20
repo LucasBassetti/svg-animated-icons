@@ -1,0 +1,41 @@
+.ai-bell-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-bell-icon * {
+  transform-box: fill-box;
+}
+
+.ai-bell-icon .bell,
+.ai-bell-icon .clapper {
+  transform-box: view-box;
+  transform-origin: 7.5px 2.5px;
+}
+
+.ai-bell-icon:not(.no-hover):hover .bell,
+.ai-bell-icon:not(.no-hover):hover .clapper {
+  animation: ai-bell-motion-1 700ms ease-in-out;
+}
+
+.ai-bell-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-bell-motion-1 {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-12deg);
+  }
+  75% {
+    transform: rotate(12deg);
+  }
+}

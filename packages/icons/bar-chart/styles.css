@@ -1,0 +1,58 @@
+.ai-bar-chart-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-bar-chart-icon * {
+  transform-box: fill-box;
+}
+
+.ai-bar-chart-icon .bar {
+  transform-origin: center bottom;
+}
+
+.ai-bar-chart-icon:not(.no-hover):hover .bar-1 { animation: ai-bar-chart-1 700ms ease-in-out; }
+.ai-bar-chart-icon:not(.no-hover):hover .bar-2 { animation: ai-bar-chart-2 700ms ease-in-out; }
+.ai-bar-chart-icon:not(.no-hover):hover .bar-3 { animation: ai-bar-chart-3 700ms ease-in-out; }
+.ai-bar-chart-icon:not(.no-hover):hover .bar-4 { animation: ai-bar-chart-4 700ms ease-in-out; }
+.ai-bar-chart-icon:not(.no-hover):hover .bar-5 { animation: ai-bar-chart-5 700ms ease-in-out; }
+.ai-bar-chart-icon:not(.no-hover):hover .bar-6 { animation: ai-bar-chart-6 700ms ease-in-out; }
+.ai-bar-chart-icon:not(.no-hover):hover .bar-7 { animation: ai-bar-chart-7 700ms ease-in-out; }
+
+.ai-bar-chart-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-bar-chart-1 {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.85); }
+}
+@keyframes ai-bar-chart-2 {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.08); }
+}
+@keyframes ai-bar-chart-3 {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.18); }
+}
+@keyframes ai-bar-chart-4 {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.75); }
+}
+@keyframes ai-bar-chart-5 {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.92); }
+}
+@keyframes ai-bar-chart-6 {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.1); }
+}
+@keyframes ai-bar-chart-7 {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.82); }
+}

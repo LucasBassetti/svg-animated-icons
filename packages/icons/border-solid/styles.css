@@ -1,0 +1,37 @@
+.ai-border-solid-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-border-solid-icon * {
+  transform-box: fill-box;
+}
+
+.ai-border-solid-icon .line {
+  stroke-dasharray: 12.5;
+}
+
+.ai-border-solid-icon:not(.no-hover):hover .line {
+  animation: ai-border-solid-erase-redraw 700ms ease-in-out;
+}
+
+.ai-border-solid-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-border-solid-erase-redraw {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dashoffset: -12.5;
+  }
+  100% {
+    stroke-dashoffset: -25;
+  }
+}

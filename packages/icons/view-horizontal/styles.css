@@ -1,0 +1,40 @@
+.ai-view-horizontal-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-view-horizontal-icon * {
+  transform-box: fill-box;
+}
+
+.ai-view-horizontal-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-view-horizontal-icon .top,
+.ai-view-horizontal-icon .bottom {
+  transform-origin: center;
+}
+
+.ai-view-horizontal-icon:not(.no-hover):hover .top {
+  animation: ai-view-horizontal-top 700ms ease-in-out;
+}
+
+.ai-view-horizontal-icon:not(.no-hover):hover .bottom {
+  animation: ai-view-horizontal-bottom 700ms ease-in-out;
+}
+
+@keyframes ai-view-horizontal-top {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1px); }
+}
+
+@keyframes ai-view-horizontal-bottom {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(1px); }
+}

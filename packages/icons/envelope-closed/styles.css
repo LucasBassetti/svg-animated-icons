@@ -1,0 +1,32 @@
+.ai-envelope-closed-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-envelope-closed-icon * {
+  transform-box: fill-box;
+}
+
+.ai-envelope-closed-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-envelope-closed-icon .envelope {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-envelope-closed-icon:not(.no-hover):hover .envelope {
+  animation: ai-envelope-closed-motion 700ms ease-in-out;
+}
+
+@keyframes ai-envelope-closed-motion {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-4deg); }
+  75% { transform: rotate(4deg); }
+}

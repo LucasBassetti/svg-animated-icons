@@ -1,0 +1,35 @@
+.ai-button-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-button-icon * {
+  transform-box: fill-box;
+}
+
+.ai-button-icon:not(.no-hover):hover .dot {
+  animation: ai-button-motion-1 700ms ease-in-out;
+}
+
+.ai-button-icon:not(.no-hover):hover .dot-1 { animation-delay: 0ms; }
+.ai-button-icon:not(.no-hover):hover .dot-2 { animation-delay: 120ms; }
+.ai-button-icon:not(.no-hover):hover .dot-3 { animation-delay: 240ms; }
+
+.ai-button-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-button-motion-1 {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}

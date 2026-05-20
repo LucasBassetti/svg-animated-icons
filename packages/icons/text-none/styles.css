@@ -1,0 +1,31 @@
+.ai-text-none-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-text-none-icon * {
+  transform-box: fill-box;
+}
+
+.ai-text-none-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-text-none-icon .slash {
+  stroke-dasharray: 16;
+}
+
+.ai-text-none-icon:not(.no-hover):hover .slash {
+  animation: ai-text-none-draw 700ms ease-in-out;
+}
+
+@keyframes ai-text-none-draw {
+  0% { stroke-dashoffset: 0; }
+  50% { stroke-dashoffset: -16; }
+  100% { stroke-dashoffset: -32; }
+}

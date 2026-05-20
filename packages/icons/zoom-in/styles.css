@@ -1,0 +1,31 @@
+.ai-zoom-in-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-zoom-in-icon * {
+  transform-box: fill-box;
+}
+
+.ai-zoom-in-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-zoom-in-icon .plus {
+  transform-box: view-box;
+  transform-origin: 6.5px 6.5px;
+}
+
+.ai-zoom-in-icon:not(.no-hover):hover .plus {
+  animation: ai-zoom-in-pop 700ms ease-in-out;
+}
+
+@keyframes ai-zoom-in-pop {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}

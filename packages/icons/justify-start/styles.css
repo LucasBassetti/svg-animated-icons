@@ -1,0 +1,30 @@
+.ai-justify-start-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-justify-start-icon * {
+  transform-box: fill-box;
+}
+
+.ai-justify-start-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-justify-start-icon .pill {
+  transform-origin: center;
+}
+
+.ai-justify-start-icon:not(.no-hover):hover .pill {
+  animation: ai-justify-start-slide 700ms ease-in-out;
+}
+
+@keyframes ai-justify-start-slide {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-1px); }
+}

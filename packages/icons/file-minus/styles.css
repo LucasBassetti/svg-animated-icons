@@ -1,0 +1,29 @@
+.ai-file-minus-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-file-minus-icon * {
+  transform-box: fill-box;
+}
+
+.ai-file-minus-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-file-minus-icon .minus { transform-origin: center; }
+
+.ai-file-minus-icon:not(.no-hover):hover .minus {
+  animation: ai-file-minus-motion 700ms ease-in-out;
+}
+
+@keyframes ai-file-minus-motion {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-1px); }
+  75% { transform: translateX(1px); }
+}

@@ -1,0 +1,61 @@
+.ai-section-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-section-icon * {
+  transform-box: fill-box;
+}
+
+.ai-section-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-section-icon [class^="dot-"] {
+  transform-origin: center;
+}
+
+.ai-section-icon:not(.no-hover):hover .dot-t1,
+.ai-section-icon:not(.no-hover):hover .dot-b1 {
+  animation: ai-section-blink 700ms ease-in-out 0ms;
+}
+
+.ai-section-icon:not(.no-hover):hover .dot-t2,
+.ai-section-icon:not(.no-hover):hover .dot-b2 {
+  animation: ai-section-blink 700ms ease-in-out 50ms;
+}
+
+.ai-section-icon:not(.no-hover):hover .dot-t3,
+.ai-section-icon:not(.no-hover):hover .dot-b3 {
+  animation: ai-section-blink 700ms ease-in-out 100ms;
+}
+
+.ai-section-icon:not(.no-hover):hover .dot-t4,
+.ai-section-icon:not(.no-hover):hover .dot-b4 {
+  animation: ai-section-blink 700ms ease-in-out 150ms;
+}
+
+.ai-section-icon:not(.no-hover):hover .dot-t5,
+.ai-section-icon:not(.no-hover):hover .dot-b5 {
+  animation: ai-section-blink 700ms ease-in-out 200ms;
+}
+
+.ai-section-icon:not(.no-hover):hover .dot-t6,
+.ai-section-icon:not(.no-hover):hover .dot-b6 {
+  animation: ai-section-blink 700ms ease-in-out 250ms;
+}
+
+.ai-section-icon:not(.no-hover):hover .dot-t7,
+.ai-section-icon:not(.no-hover):hover .dot-b7 {
+  animation: ai-section-blink 700ms ease-in-out 300ms;
+}
+
+@keyframes ai-section-blink {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+}

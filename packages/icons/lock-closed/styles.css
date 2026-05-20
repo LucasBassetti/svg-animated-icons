@@ -1,0 +1,31 @@
+.ai-lock-closed-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-lock-closed-icon * {
+  transform-box: fill-box;
+}
+
+.ai-lock-closed-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-lock-closed-icon .shackle {
+  transform-box: view-box;
+  transform-origin: 10.5px 6px;
+}
+
+.ai-lock-closed-icon:not(.no-hover):hover .shackle {
+  animation: ai-lock-closed-open-close 700ms ease-in-out;
+}
+
+@keyframes ai-lock-closed-open-close {
+  0%, 100% { transform: rotate(0); }
+  50% { transform: rotate(30deg); }
+}

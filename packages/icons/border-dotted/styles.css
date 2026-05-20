@@ -1,0 +1,36 @@
+.ai-border-dotted-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-border-dotted-icon * {
+  transform-box: fill-box;
+}
+
+.ai-border-dotted-icon:not(.no-hover):hover .dot {
+  animation: ai-border-dotted-motion-1 700ms ease-in-out;
+}
+
+.ai-border-dotted-icon:not(.no-hover):hover .dot-1 { animation-delay: 0ms; }
+.ai-border-dotted-icon:not(.no-hover):hover .dot-2 { animation-delay: 90ms; }
+.ai-border-dotted-icon:not(.no-hover):hover .dot-3 { animation-delay: 180ms; }
+.ai-border-dotted-icon:not(.no-hover):hover .dot-4 { animation-delay: 270ms; }
+
+.ai-border-dotted-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-border-dotted-motion-1 {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}

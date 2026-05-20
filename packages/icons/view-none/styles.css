@@ -1,0 +1,32 @@
+.ai-view-none-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-view-none-icon * {
+  transform-box: fill-box;
+}
+
+.ai-view-none-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-view-none-icon .shape {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-view-none-icon:not(.no-hover):hover .shape {
+  animation: ai-view-none-wobble 700ms ease-in-out;
+}
+
+@keyframes ai-view-none-wobble {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-6deg); }
+  75% { transform: rotate(6deg); }
+}

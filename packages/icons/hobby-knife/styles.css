@@ -1,0 +1,32 @@
+.ai-hobby-knife-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-hobby-knife-icon * {
+  transform-box: fill-box;
+}
+
+.ai-hobby-knife-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-hobby-knife-icon .knife {
+  transform-box: view-box;
+  transform-origin: 13.5px 13px;
+}
+
+.ai-hobby-knife-icon:not(.no-hover):hover .knife {
+  animation: ai-hobby-knife-slice 700ms ease-in-out;
+}
+
+@keyframes ai-hobby-knife-slice {
+  0%, 100% { transform: rotate(0); }
+  35% { transform: rotate(-10deg); }
+  70% { transform: rotate(6deg); }
+}

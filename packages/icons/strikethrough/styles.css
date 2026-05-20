@@ -1,0 +1,31 @@
+.ai-strikethrough-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-strikethrough-icon * {
+  transform-box: fill-box;
+}
+
+.ai-strikethrough-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-strikethrough-icon .line {
+  stroke-dasharray: 10;
+}
+
+.ai-strikethrough-icon:not(.no-hover):hover .line {
+  animation: ai-strikethrough-draw 700ms ease-in-out;
+}
+
+@keyframes ai-strikethrough-draw {
+  0% { stroke-dashoffset: 0; }
+  50% { stroke-dashoffset: -10; }
+  100% { stroke-dashoffset: -20; }
+}

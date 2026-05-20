@@ -1,0 +1,31 @@
+.ai-stretch-horizontally-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-stretch-horizontally-icon * {
+  transform-box: fill-box;
+}
+
+.ai-stretch-horizontally-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-stretch-horizontally-icon .shape {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-stretch-horizontally-icon:not(.no-hover):hover .shape {
+  animation: ai-stretch-horizontally-stretch 700ms ease-in-out;
+}
+
+@keyframes ai-stretch-horizontally-stretch {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(1.1); }
+}

@@ -1,0 +1,53 @@
+.ai-commit-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-commit-icon * {
+  transform-box: fill-box;
+}
+
+.ai-commit-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-commit-icon .node {
+  transform-origin: center;
+}
+
+.ai-commit-icon .line-left,
+.ai-commit-icon .line-right {
+  stroke-dasharray: 4 6;
+}
+
+.ai-commit-icon:not(.no-hover):hover .node {
+  animation: ai-commit-slide 700ms ease-in-out;
+}
+
+.ai-commit-icon:not(.no-hover):hover .line-left {
+  animation: ai-commit-line-left 700ms ease-in-out;
+}
+
+.ai-commit-icon:not(.no-hover):hover .line-right {
+  animation: ai-commit-line-right 700ms ease-in-out;
+}
+
+@keyframes ai-commit-slide {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(2px); }
+}
+
+@keyframes ai-commit-line-left {
+  0%, 100% { stroke-dasharray: 4 6; }
+  50% { stroke-dasharray: 6 6; }
+}
+
+@keyframes ai-commit-line-right {
+  0%, 100% { stroke-dasharray: 4 6; }
+  50% { stroke-dasharray: 2 6; }
+}

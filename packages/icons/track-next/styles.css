@@ -1,0 +1,30 @@
+.ai-track-next-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-track-next-icon * {
+  transform-box: fill-box;
+}
+
+.ai-track-next-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-track-next-icon .triangle {
+  transform-origin: center;
+}
+
+.ai-track-next-icon:not(.no-hover):hover .triangle {
+  animation: ai-track-next-push 700ms ease-in-out;
+}
+
+@keyframes ai-track-next-push {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(1px); }
+}

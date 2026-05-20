@@ -1,0 +1,35 @@
+.ai-circle-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-circle-icon * {
+  transform-box: fill-box;
+}
+
+.ai-circle-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-circle-icon .ring {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+}
+
+.ai-circle-icon:not(.no-hover):hover .ring {
+  animation: ai-circle-draw 700ms ease-out forwards;
+}
+
+.ai-circle-icon:not(:hover) .ring {
+  stroke-dashoffset: 0;
+}
+
+@keyframes ai-circle-draw {
+  from { stroke-dashoffset: 40; }
+  to { stroke-dashoffset: 0; }
+}

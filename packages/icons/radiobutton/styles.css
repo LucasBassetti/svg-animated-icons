@@ -1,0 +1,30 @@
+.ai-radiobutton-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-radiobutton-icon * {
+  transform-box: fill-box;
+}
+
+.ai-radiobutton-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-radiobutton-icon .dot {
+  transform-origin: center;
+}
+
+.ai-radiobutton-icon:not(.no-hover):hover .dot {
+  animation: ai-radiobutton-pulse 700ms ease-in-out;
+}
+
+@keyframes ai-radiobutton-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}

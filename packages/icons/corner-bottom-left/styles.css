@@ -1,0 +1,31 @@
+.ai-corner-bottom-left-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-corner-bottom-left-icon * {
+  transform-box: fill-box;
+}
+
+.ai-corner-bottom-left-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-corner-bottom-left-icon .curve {
+  stroke-dasharray: 16;
+  stroke-dashoffset: 0;
+}
+
+.ai-corner-bottom-left-icon:not(.no-hover):hover .curve {
+  animation: ai-corner-bottom-left-draw 700ms ease-in-out;
+}
+
+@keyframes ai-corner-bottom-left-draw {
+  0% { stroke-dashoffset: 16; }
+  50%, 100% { stroke-dashoffset: 0; }
+}

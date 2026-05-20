@@ -1,0 +1,30 @@
+.ai-underline-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-underline-icon * {
+  transform-box: fill-box;
+}
+
+.ai-underline-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-underline-icon .bar {
+  transform-origin: center;
+}
+
+.ai-underline-icon:not(.no-hover):hover .bar {
+  animation: ai-underline-pulse 700ms ease-in-out;
+}
+
+@keyframes ai-underline-pulse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(1px); }
+}

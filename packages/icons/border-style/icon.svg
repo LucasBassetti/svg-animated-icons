@@ -1,0 +1,5 @@
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path class="row row-solid" d="M1.5 3.5H13.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+  <path class="row row-dashed" d="M1.5 7.5H3.5M6.5 7.5H8.5M11.5 7.5H13.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+  <path class="row row-dotted" d="M1.5 11.5H13.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-dasharray="0 2"/>
+</svg>

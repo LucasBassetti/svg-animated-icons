@@ -1,0 +1,35 @@
+.ai-bookmark-filled-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-bookmark-filled-icon * {
+  transform-box: fill-box;
+}
+
+.ai-bookmark-filled-icon .ribbon {
+  transform-origin: center top;
+}
+
+.ai-bookmark-filled-icon:not(.no-hover):hover .ribbon {
+  animation: ai-bookmark-filled-motion-1 700ms ease-in-out;
+}
+
+.ai-bookmark-filled-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-bookmark-filled-motion-1 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(1px);
+  }
+}

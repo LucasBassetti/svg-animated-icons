@@ -1,0 +1,31 @@
+.ai-pie-chart-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-pie-chart-icon * {
+  transform-box: fill-box;
+}
+
+.ai-pie-chart-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-pie-chart-icon .slice {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-pie-chart-icon:not(.no-hover):hover .slice {
+  animation: ai-pie-chart-sweep 700ms ease-in-out;
+}
+
+@keyframes ai-pie-chart-sweep {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}

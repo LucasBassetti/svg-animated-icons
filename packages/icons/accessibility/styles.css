@@ -1,0 +1,104 @@
+.ai-accessibility-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-accessibility-icon * {
+  transform-box: fill-box;
+  transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 220ms ease;
+}
+
+.ai-accessibility-icon .left-arm {
+  transform-origin: right center;
+}
+.ai-accessibility-icon .right-arm {
+  transform-origin: left center;
+}
+.ai-accessibility-icon .left-leg {
+  transform-origin: top right;
+}
+.ai-accessibility-icon .right-leg {
+  transform-origin: top left;
+}
+.ai-accessibility-icon .head {
+  transform-origin: center;
+}
+
+.ai-accessibility-icon:not(.no-hover):hover .left-arm {
+  animation: ai-accessibility-motion-1 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ai-accessibility-icon:not(.no-hover):hover .right-arm {
+  animation: ai-accessibility-motion-2 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ai-accessibility-icon:not(.no-hover):hover .left-leg {
+  animation: ai-accessibility-motion-3 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ai-accessibility-icon:not(.no-hover):hover .right-leg {
+  animation: ai-accessibility-motion-4 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ai-accessibility-icon:not(.no-hover):hover .head {
+  animation: ai-accessibility-motion-5 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ai-accessibility-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-accessibility-motion-1 {
+  0%,
+  100% {
+    transform: none;
+  }
+  52% {
+    transform: rotate(-16deg) translateX(-0.25px);
+  }
+}
+
+@keyframes ai-accessibility-motion-2 {
+  0%,
+  100% {
+    transform: none;
+  }
+  52% {
+    transform: rotate(16deg) translateX(0.25px);
+  }
+}
+
+@keyframes ai-accessibility-motion-3 {
+  0%,
+  100% {
+    transform: none;
+  }
+  52% {
+    transform: rotate(7deg);
+  }
+}
+
+@keyframes ai-accessibility-motion-4 {
+  0%,
+  100% {
+    transform: none;
+  }
+  52% {
+    transform: rotate(-7deg);
+  }
+}
+
+@keyframes ai-accessibility-motion-5 {
+  0%,
+  100% {
+    transform: none;
+  }
+  52% {
+    transform: translateY(-0.35px);
+  }
+}

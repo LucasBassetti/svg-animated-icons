@@ -1,0 +1,40 @@
+.ai-sun-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-sun-icon * {
+  transform-box: fill-box;
+}
+
+.ai-sun-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-sun-icon [class^="ray-"] {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-sun-icon:not(.no-hover):hover [class^="ray-"] {
+  animation: ai-sun-burst 700ms ease-in-out;
+}
+
+.ai-sun-icon:not(.no-hover):hover .ray-top { animation-delay: 0ms; }
+.ai-sun-icon:not(.no-hover):hover .ray-tr { animation-delay: 40ms; }
+.ai-sun-icon:not(.no-hover):hover .ray-right { animation-delay: 80ms; }
+.ai-sun-icon:not(.no-hover):hover .ray-br { animation-delay: 120ms; }
+.ai-sun-icon:not(.no-hover):hover .ray-bottom { animation-delay: 160ms; }
+.ai-sun-icon:not(.no-hover):hover .ray-bl { animation-delay: 200ms; }
+.ai-sun-icon:not(.no-hover):hover .ray-left { animation-delay: 240ms; }
+.ai-sun-icon:not(.no-hover):hover .ray-tl { animation-delay: 280ms; }
+
+@keyframes ai-sun-burst {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}

@@ -1,0 +1,32 @@
+.ai-hand-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-hand-icon * {
+  transform-box: fill-box;
+}
+
+.ai-hand-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-hand-icon .hand {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-hand-icon:not(.no-hover):hover .hand {
+  animation: ai-hand-rock 700ms ease-in-out;
+}
+
+@keyframes ai-hand-rock {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-15deg); }
+  75% { transform: rotate(15deg); }
+}

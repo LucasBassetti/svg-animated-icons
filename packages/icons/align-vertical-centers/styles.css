@@ -1,0 +1,35 @@
+.ai-align-vertical-centers-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-align-vertical-centers-icon * {
+  transform-box: fill-box;
+}
+
+.ai-align-vertical-centers-icon:not(.no-hover):hover .top-block,
+.ai-align-vertical-centers-icon:not(.no-hover):hover .bottom-block {
+  animation: ai-align-vertical-centers-motion 700ms ease-in-out;
+}
+
+.ai-align-vertical-centers-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-align-vertical-centers-motion {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(-1.25px);
+  }
+  66% {
+    transform: translateX(1.25px);
+  }
+}

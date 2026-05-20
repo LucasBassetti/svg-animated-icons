@@ -1,0 +1,45 @@
+.ai-rows-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-rows-icon * {
+  transform-box: fill-box;
+}
+
+.ai-rows-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-rows-icon .row-1,
+.ai-rows-icon .row-2,
+.ai-rows-icon .row-3,
+.ai-rows-icon .row-4 {
+  transform-origin: center;
+}
+
+.ai-rows-icon:not(.no-hover):hover .row-1 {
+  animation: ai-rows-slide 700ms ease-in-out;
+}
+
+.ai-rows-icon:not(.no-hover):hover .row-2 {
+  animation: ai-rows-slide 700ms ease-in-out 80ms;
+}
+
+.ai-rows-icon:not(.no-hover):hover .row-3 {
+  animation: ai-rows-slide 700ms ease-in-out 160ms;
+}
+
+.ai-rows-icon:not(.no-hover):hover .row-4 {
+  animation: ai-rows-slide 700ms ease-in-out 240ms;
+}
+
+@keyframes ai-rows-slide {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(1px); }
+}

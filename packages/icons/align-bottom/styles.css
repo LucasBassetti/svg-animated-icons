@@ -1,0 +1,53 @@
+.ai-align-bottom-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-align-bottom-icon * {
+  transform-box: fill-box;
+  transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 220ms ease;
+}
+
+.ai-align-bottom-icon .block {
+  transform-origin: center bottom;
+}
+.ai-align-bottom-icon .rail {
+  transform-origin: center;
+}
+
+.ai-align-bottom-icon:not(.no-hover):hover .block {
+  animation: ai-align-bottom-motion-1 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ai-align-bottom-icon:not(.no-hover):hover .rail {
+  animation: ai-align-bottom-motion-2 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ai-align-bottom-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-align-bottom-motion-1 {
+  0%,
+  100% {
+    transform: none;
+  }
+  52% {
+    transform: translateY(0.75px) scaleY(0.94);
+  }
+}
+
+@keyframes ai-align-bottom-motion-2 {
+  0%,
+  100% {
+    transform: none;
+  }
+  52% {
+    transform: scaleX(1.06);
+  }
+}

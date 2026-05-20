@@ -1,0 +1,31 @@
+.ai-timer-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-timer-icon * {
+  transform-box: fill-box;
+}
+
+.ai-timer-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-timer-icon .hand {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-timer-icon:not(.no-hover):hover .hand {
+  animation: ai-timer-sweep 700ms linear;
+}
+
+@keyframes ai-timer-sweep {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}

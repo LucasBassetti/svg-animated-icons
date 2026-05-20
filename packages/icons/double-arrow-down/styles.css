@@ -1,0 +1,37 @@
+.ai-double-arrow-down-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-double-arrow-down-icon * {
+  transform-box: fill-box;
+}
+
+.ai-double-arrow-down-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-double-arrow-down-icon .chev { transform-origin: center; }
+
+.ai-double-arrow-down-icon:not(.no-hover):hover .chev-1 {
+  animation: ai-double-arrow-down-1 700ms ease-in-out 0ms;
+}
+
+.ai-double-arrow-down-icon:not(.no-hover):hover .chev-2 {
+  animation: ai-double-arrow-down-2 700ms ease-in-out 120ms;
+}
+
+@keyframes ai-double-arrow-down-1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(1.5px); }
+}
+
+@keyframes ai-double-arrow-down-2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(1.5px); }
+}

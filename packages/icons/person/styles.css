@@ -1,0 +1,32 @@
+.ai-person-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-person-icon * {
+  transform-box: fill-box;
+}
+
+.ai-person-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-person-icon .person {
+  transform-box: view-box;
+  transform-origin: 7.5px 14px;
+}
+
+.ai-person-icon:not(.no-hover):hover .person {
+  animation: ai-person-wave 700ms ease-in-out;
+}
+
+@keyframes ai-person-wave {
+  0%, 100% { transform: rotate(0); }
+  35% { transform: rotate(-8deg); }
+  70% { transform: rotate(8deg); }
+}

@@ -1,0 +1,4 @@
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect class="back" x="1.5" y="1.5" width="8" height="8" rx="0.5" stroke="currentColor" stroke-width="1"/>
+  <rect class="front" x="5.5" y="5.5" width="8" height="8" rx="0.5" stroke="currentColor" stroke-width="1" fill="black"/>
+</svg>

@@ -1,0 +1,54 @@
+.ai-component-1-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-component-1-icon * {
+  transform-box: fill-box;
+}
+
+.ai-component-1-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-component-1-icon .diamond {
+  transform-origin: center;
+}
+
+.ai-component-1-icon:not(.no-hover):hover .diamond-top {
+  animation: ai-component-1-top 700ms ease-in-out;
+}
+
+.ai-component-1-icon:not(.no-hover):hover .diamond-bottom {
+  animation: ai-component-1-bottom 700ms ease-in-out;
+}
+
+.ai-component-1-icon:not(.no-hover):hover .diamond-left {
+  animation: ai-component-1-left 700ms ease-in-out;
+}
+
+.ai-component-1-icon:not(.no-hover):hover .diamond-right {
+  animation: ai-component-1-right 700ms ease-in-out;
+}
+
+@keyframes ai-component-1-top {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1px); }
+}
+@keyframes ai-component-1-bottom {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(1px); }
+}
+@keyframes ai-component-1-left {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-1px); }
+}
+@keyframes ai-component-1-right {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(1px); }
+}

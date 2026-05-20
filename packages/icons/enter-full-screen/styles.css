@@ -1,0 +1,31 @@
+.ai-enter-full-screen-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-enter-full-screen-icon * {
+  transform-box: fill-box;
+}
+
+.ai-enter-full-screen-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-enter-full-screen-icon .corners {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-enter-full-screen-icon:not(.no-hover):hover .corners {
+  animation: ai-enter-full-screen-motion 700ms ease-in-out;
+}
+
+@keyframes ai-enter-full-screen-motion {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}

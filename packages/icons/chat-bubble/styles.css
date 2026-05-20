@@ -1,0 +1,34 @@
+.ai-chat-bubble-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-chat-bubble-icon * {
+  transform-box: fill-box;
+}
+
+.ai-chat-bubble-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-chat-bubble-icon .dot {
+  transform-origin: center;
+}
+
+.ai-chat-bubble-icon:not(.no-hover):hover .dot {
+  animation: ai-chat-bubble-bounce 700ms ease-in-out;
+}
+
+.ai-chat-bubble-icon:not(.no-hover):hover .dot-1 { animation-delay: 0ms; }
+.ai-chat-bubble-icon:not(.no-hover):hover .dot-2 { animation-delay: 100ms; }
+.ai-chat-bubble-icon:not(.no-hover):hover .dot-3 { animation-delay: 200ms; }
+
+@keyframes ai-chat-bubble-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1.25px); }
+}

@@ -1,0 +1,31 @@
+.ai-cross-1-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-cross-1-icon * {
+  transform-box: fill-box;
+}
+
+.ai-cross-1-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-cross-1-icon .cross {
+  transform-box: view-box;
+  transform-origin: 7.5px 7.5px;
+}
+
+.ai-cross-1-icon:not(.no-hover):hover .cross {
+  animation: ai-cross-1-spin 700ms ease-in-out;
+}
+
+@keyframes ai-cross-1-spin {
+  0%, 100% { transform: rotate(0); }
+  50% { transform: rotate(90deg); }
+}

@@ -1,0 +1,34 @@
+.ai-border-bottom-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-border-bottom-icon * {
+  transform-box: fill-box;
+}
+
+.ai-border-bottom-icon .bottom {
+  stroke-dasharray: 13;
+}
+
+.ai-border-bottom-icon:not(.no-hover):hover .bottom {
+  animation: ai-border-bottom-draw 700ms ease-out;
+}
+
+.ai-border-bottom-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-border-bottom-draw {
+  from {
+    stroke-dashoffset: 13;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

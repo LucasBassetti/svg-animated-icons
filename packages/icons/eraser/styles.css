@@ -1,0 +1,31 @@
+.ai-eraser-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-eraser-icon * {
+  transform-box: fill-box;
+}
+
+.ai-eraser-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-eraser-icon .eraser {
+  transform-origin: center;
+}
+
+.ai-eraser-icon:not(.no-hover):hover .eraser {
+  animation: ai-eraser-motion 700ms ease-in-out;
+}
+
+@keyframes ai-eraser-motion {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-1px, 1px); }
+  75% { transform: translate(1px, -1px); }
+}

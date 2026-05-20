@@ -1,0 +1,30 @@
+.ai-speaker-off-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-speaker-off-icon * {
+  transform-box: fill-box;
+}
+
+.ai-speaker-off-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-speaker-off-icon .cross {
+  transform-origin: center;
+}
+
+.ai-speaker-off-icon:not(.no-hover):hover .cross {
+  animation: ai-speaker-off-pulse 700ms ease-in-out;
+}
+
+@keyframes ai-speaker-off-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}

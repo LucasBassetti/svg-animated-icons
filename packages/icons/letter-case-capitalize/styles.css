@@ -1,0 +1,30 @@
+.ai-letter-case-capitalize-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-letter-case-capitalize-icon * {
+  transform-box: fill-box;
+}
+
+.ai-letter-case-capitalize-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-letter-case-capitalize-icon .letters {
+  transform-origin: center;
+}
+
+.ai-letter-case-capitalize-icon:not(.no-hover):hover .letters {
+  animation: ai-letter-case-capitalize-emphasis 700ms ease-in-out;
+}
+
+@keyframes ai-letter-case-capitalize-emphasis {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-0.8px); }
+}

@@ -1,0 +1,5 @@
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect class="bar bar-thin" x="1" y="3" width="13" height="1" rx="0.5" fill="currentColor"/>
+  <rect class="bar bar-mid" x="1" y="6" width="13" height="2" rx="0.5" fill="currentColor"/>
+  <rect class="bar bar-thick" x="1" y="10.25" width="13" height="2.5" rx="0.5" fill="currentColor"/>
+</svg>

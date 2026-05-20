@@ -1,0 +1,35 @@
+.ai-check-circled-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-check-circled-icon * {
+  transform-box: fill-box;
+}
+
+.ai-check-circled-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.ai-check-circled-icon .check {
+  stroke-dasharray: 10;
+  stroke-dashoffset: 10;
+}
+
+.ai-check-circled-icon:not(.no-hover):hover .check {
+  animation: ai-check-circled-draw 700ms ease-out forwards;
+}
+
+.ai-check-circled-icon:not(:hover) .check {
+  stroke-dashoffset: 0;
+}
+
+@keyframes ai-check-circled-draw {
+  from { stroke-dashoffset: 10; }
+  to { stroke-dashoffset: 0; }
+}

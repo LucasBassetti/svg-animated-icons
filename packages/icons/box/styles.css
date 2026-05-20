@@ -1,0 +1,35 @@
+.ai-box-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.ai-box-icon * {
+  transform-box: fill-box;
+}
+
+.ai-box-icon .frame {
+  transform-origin: center;
+}
+
+.ai-box-icon:not(.no-hover):hover .frame {
+  animation: ai-box-motion-1 700ms ease-in-out;
+}
+
+.ai-box-icon.no-hover * {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes ai-box-motion-1 {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+}

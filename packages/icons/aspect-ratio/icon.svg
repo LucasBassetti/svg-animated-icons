@@ -1,0 +1,5 @@
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect class="frame" x="1.5" y="2" width="12" height="11" rx="1" stroke="currentColor" stroke-width="1"/>
+  <path class="corner-tl" d="M6 4H4V6" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="corner-br" d="M9 11H11V9" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
