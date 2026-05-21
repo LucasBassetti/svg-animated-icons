@@ -3,17 +3,19 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm --filter @svg-animated-icons/icons registry:build && next dev --port 3000",
+    "dev": "next dev --port 3000",
     "build": "pnpm --filter @svg-animated-icons/icons registry:build && next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf .next"
   },
   "dependencies": {
+    "@svg-animated-icons/codegen": "workspace:*",
     "fuse.js": "^7.3.0",
     "next": "15.1.3",
     "react": "19.0.0",
-    "react-dom": "19.0.0"
+    "react-dom": "19.0.0",
+    "shiki": "^1.24.0"
   },
   "devDependencies": {
     "@types/node": "22.10.2",

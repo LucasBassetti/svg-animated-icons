@@ -1,24 +1,35 @@
 import { join } from "node:path";
 import kleur from "kleur";
+import {
+  extractSvgInner,
+  readTemplate,
+  renderTemplate,
+  toComponentName,
+  transformInnerForReact,
+} from "@svg-animated-icons/codegen";
 import { fetchIcon } from "../registry.js";
-import { extractSvgInner, readTemplate, renderTemplate, toComponentName } from "../template.js";
 import { writeProjectFile } from "../write-file.js";
+
+type Framework = "react" | "vue" | "angular";
 
 type Options = {
   icon: string;
   react?: boolean;
   vue?: boolean;
-  svelte?: boolean;
+  angular?: boolean;
   dest?: string;
   registry?: string;
   force?: boolean;
 };
 
+const FRAMEWORK_FILE: Record<Framework, { template: string; ext: string }> = {
+  react: { template: "react.tpl", ext: "tsx" },
+  vue: { template: "vue.tpl", ext: "vue" },
+  angular: { template: "angular.tpl", ext: "component.ts" },
+};
+
 export async function addCommand(opts: Options): Promise<void> {
   const framework = pickFramework(opts);
-  if (framework !== "react") {
-    throw new Error(`Framework "${framework}" is not yet supported. Only --react works today.`);
-  }
 
   console.log(kleur.bold(`Adding ${opts.icon} icon (${framework})`));
 
@@ -26,22 +37,36 @@ export async function addCommand(opts: Options): Promise<void> {
   const { inner, viewBox, outerClass } = extractSvgInner(icon.svg);
   const componentName = toComponentName(icon.name);
   const baseClass = outerClass || `ai-${icon.name}-icon`;
+  const svgInner = framework === "react" ? transformInnerForReact(inner) : inner;
 
-  const template = await readTemplate("react.tpl");
-  const content = renderTemplate(template, {
+  const { template, ext } = FRAMEWORK_FILE[framework];
+  const content = renderTemplate(readTemplate(template), {
     ComponentName: componentName,
     baseClass,
     css: icon.css,
     viewBox,
-    svgInner: inner,
+    svgInner,
+    iconName: icon.name,
   });
 
   const dest = opts.dest ?? join("components", "svg-icons");
-  await writeProjectFile(join(dest, `${icon.name}.tsx`), content, { force: opts.force });
+  await writeProjectFile(join(dest, `${icon.name}.${ext}`), content, { force: opts.force });
 }
 
-function pickFramework(opts: Options): "react" | "vue" | "svelte" {
-  if (opts.vue) return "vue";
-  if (opts.svelte) return "svelte";
-  return "react";
+export function pickFramework(opts: {
+  react?: boolean;
+  vue?: boolean;
+  angular?: boolean;
+}): Framework {
+  const picks: Framework[] = [];
+  if (opts.react) picks.push("react");
+  if (opts.vue) picks.push("vue");
+  if (opts.angular) picks.push("angular");
+  if (picks.length === 0) {
+    throw new Error("Specify a framework: --react, --vue, or --angular");
+  }
+  if (picks.length > 1) {
+    throw new Error(`Pick one framework flag, got: ${picks.map((p) => `--${p}`).join(", ")}`);
+  }
+  return picks[0] as Framework;
 }

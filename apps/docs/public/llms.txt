@@ -1,0 +1,42 @@
+# @svg-animated-icons
+
+> Animated SVG icon library for React, Vue, and Angular. ~347 hover-animated icons. Two consumption models: install the per-framework npm package, or use a shadcn-style CLI that copies a single self-contained component file into your repo. No runtime dependency.
+
+Each icon ships as a standalone component carrying its own SVG markup and a small CSS keyframe block that triggers on `:hover`. There is no central icon registry imported at runtime, no theme provider, and no bundled styles to wire up. Animations are pure CSS; the SVG is plain markup.
+
+## Source
+
+- [GitHub repository](https://github.com/LucasBassetti/svg-animated-icons): monorepo with icon SVG sources, CLI, codegen package, framework packages, and the docs site.
+
+## Install (published packages)
+
+- React: `npm install @svg-animated-icons/react` — `import { ArrowDownIcon } from "@svg-animated-icons/react"`.
+- Vue 3: `npm install @svg-animated-icons/vue` — `import { ArrowDownIcon } from "@svg-animated-icons/vue"`.
+- Angular: `npm install @svg-animated-icons/angular` — import the standalone component class and add it to `imports`.
+
+Per-framework packages ship pre-compiled ESM with `.d.ts`. Consumers do not need vue-loader, ng-packagr, or any SFC compilation step.
+
+## Install (CLI, copy into project)
+
+- `npx @svg-animated-icons/cli add <icon-name> --react` — writes `components/svg-icons/<name>.tsx`.
+- `npx @svg-animated-icons/cli add <icon-name> --vue` — writes `components/svg-icons/<name>.vue`.
+- `npx @svg-animated-icons/cli add <icon-name> --angular` — writes `components/svg-icons/<name>.component.ts` (standalone, signal inputs).
+- `npx @svg-animated-icons/cli add morph <iconA> <iconB> --<framework>` — generates a morphing component plus a framework-agnostic `lib/svg-icons/morph.ts` engine.
+- `npx @svg-animated-icons/cli add swap <iconA> <iconB> --<framework>` — generates a toggle/swap component.
+
+## Registry
+
+The docs site hosts a JSON registry that the CLI reads from.
+
+- `/r/index.json` — array of every icon with `name`, `displayName`, and `aliases`.
+- `/r/<icon-name>.json` — that icon's raw SVG, animation CSS, and metadata (`viewBox`, `parts`, `morphCompatibleWith`).
+
+## API for AI agents
+
+- Find an icon by concept: search `/r/index.json` against `displayName` and `aliases`. The aliases field is intentionally seeded with synonyms (e.g., the `delete` icon has aliases `["remove", "trash", "bin"]`).
+- Get the source for an icon: `GET /r/<name>.json` → use `svg` and `css` fields directly, or render with the CLI.
+- Browse a specific icon's page: `/icons/<name>` shows a live preview, install commands per framework, and copy-ready component code (React, Vue, Angular tabs).
+
+## Optional
+
+- Icon detail pages (`/icons/<name>`) set the browser-tab favicon to the specific icon being viewed; the home page rotates through a random icon per visit.

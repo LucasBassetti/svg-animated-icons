@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "types": [],
+    "lib": ["ES2022", "DOM"],
+    "jsx": "preserve"
+  },
+  "include": ["src/**/*.ts", "src/**/*.vue"]
+}

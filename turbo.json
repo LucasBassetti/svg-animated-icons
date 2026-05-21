@@ -9,7 +9,34 @@
       "dependsOn": ["@svg-animated-icons/icons#registry:build"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
+    "@svg-animated-icons/react#build": {
+      "dependsOn": ["@svg-animated-icons/icons#generate:packages"],
+      "outputs": ["dist/**"]
+    },
+    "@svg-animated-icons/vue#build": {
+      "dependsOn": ["@svg-animated-icons/icons#generate:packages"],
+      "outputs": ["dist/**"]
+    },
+    "@svg-animated-icons/angular#build": {
+      "dependsOn": ["@svg-animated-icons/icons#generate:packages"],
+      "outputs": ["dist/**"]
+    },
     "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "@svg-animated-icons/docs#dev": {
+      "dependsOn": ["@svg-animated-icons/icons#registry:build"],
+      "cache": false,
+      "persistent": true
+    },
+    "@svg-animated-icons/icons#dev": {
+      "dependsOn": ["@svg-animated-icons/icons#registry:build"],
+      "cache": false,
+      "persistent": true
+    },
+    "@svg-animated-icons/cli#dev": {
+      "dependsOn": ["@svg-animated-icons/codegen#build"],
       "cache": false,
       "persistent": true
     },
@@ -18,6 +45,10 @@
     },
     "registry:build": {
       "outputs": ["../../apps/docs/public/r/**"]
+    },
+    "generate:packages": {
+      "dependsOn": ["@svg-animated-icons/icons#registry:build", "@svg-animated-icons/codegen#build"],
+      "outputs": ["../react/src/**", "../vue/src/**", "../angular/src/**"]
     },
     "clean": {
       "cache": false
