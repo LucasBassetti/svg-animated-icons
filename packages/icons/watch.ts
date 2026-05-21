@@ -1,9 +1,20 @@
 import { watch } from "node:fs";
+import { access } from "node:fs/promises";
 import { dirname, join, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildRegistry } from "./build.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const REGISTRY_INDEX = join(
+  __dirname,
+  "..",
+  "..",
+  "apps",
+  "docs",
+  "public",
+  "r",
+  "index.json",
+);
 const IGNORED_DIRS = new Set(["node_modules", ".turbo", "dist"]);
 const WATCHED_EXTENSIONS = new Set([".svg", ".css", ".json"]);
 
@@ -52,8 +63,21 @@ function scheduleBuild(reason: string): void {
   }, 150);
 }
 
+async function registryExists(): Promise<boolean> {
+  try {
+    await access(REGISTRY_INDEX);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 async function watchIconSources(): Promise<void> {
-  await runBuild("initial");
+  if (await registryExists()) {
+    console.log("✓ registry already populated, skipping initial build");
+  } else {
+    await runBuild("initial");
+  }
 
   watch(__dirname, { recursive: true }, (event, filename) => {
     const file = filename?.toString();

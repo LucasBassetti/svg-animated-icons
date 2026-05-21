@@ -19,9 +19,9 @@ const add = program
   )
   .argument("[partner]", "When using 'morph'/'swap', the first icon name")
   .argument("[partner2]", "When using 'morph'/'swap', the second icon name")
-  .option("--react", "Generate a React component (default)")
-  .option("--vue", "Generate a Vue component (not yet supported)")
-  .option("--svelte", "Generate a Svelte component (not yet supported)")
+  .option("--react", "Generate a React component")
+  .option("--vue", "Generate a Vue 3 component")
+  .option("--angular", "Generate an Angular standalone component")
   .option("--dest <dir>", "Destination directory (default: components/svg-icons)")
   .option(
     "--lib-dest <dir>",

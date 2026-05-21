@@ -1,0 +1,30 @@
+{
+  "name": "@svg-animated-icons/angular",
+  "version": "0.0.1",
+  "description": "Animated SVG icon Angular components.",
+  "scripts": {
+    "build": "ng-packagr -p ng-package.json",
+    "typecheck": "tsc --noEmit -p tsconfig.lib.json",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=17",
+    "@angular/core": ">=17"
+  },
+  "dependencies": {
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "@angular/common": "19.0.5",
+    "@angular/compiler": "19.0.5",
+    "@angular/compiler-cli": "19.0.5",
+    "@angular/core": "19.0.5",
+    "ng-packagr": "19.0.1",
+    "rxjs": "7.8.1",
+    "typescript": "5.6.3",
+    "zone.js": "0.15.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,26 +1,32 @@
 import { join } from "node:path";
 import kleur from "kleur";
+import { readTemplate, renderTemplate, toComponentName } from "@svg-animated-icons/codegen";
 import { type IconPart, fetchIcon } from "../registry.js";
-import { readTemplate, renderTemplate, toComponentName } from "../template.js";
 import { writeProjectFile } from "../write-file.js";
+import { pickFramework } from "./add.js";
+
+type Framework = "react" | "vue" | "angular";
 
 type Options = {
   from: string;
   to: string;
   react?: boolean;
   vue?: boolean;
-  svelte?: boolean;
+  angular?: boolean;
   dest?: string;
   libDest?: string;
   registry?: string;
   force?: boolean;
 };
 
+const FRAMEWORK_FILE: Record<Framework, { template: string; ext: string }> = {
+  react: { template: "react-morph.tpl", ext: "tsx" },
+  vue: { template: "vue-morph.tpl", ext: "vue" },
+  angular: { template: "angular-morph.tpl", ext: "component.ts" },
+};
+
 export async function addMorphCommand(opts: Options): Promise<void> {
   const framework = pickFramework(opts);
-  if (framework !== "react") {
-    throw new Error(`Framework "${framework}" is not yet supported. Only --react works today.`);
-  }
 
   console.log(kleur.bold(`Adding morph component ${opts.from} ↔ ${opts.to} (${framework})`));
 
@@ -51,8 +57,8 @@ export async function addMorphCommand(opts: Options): Promise<void> {
   const className = `ai-${from.name}-${to.name}-morph`;
   const partAttrs = from.meta.parts.map((p) => `data-part="${p.id}"`);
 
-  const componentTemplate = await readTemplate("react-morph.tpl");
-  const componentContent = renderTemplate(componentTemplate, {
+  const { template, ext } = FRAMEWORK_FILE[framework];
+  const componentContent = renderTemplate(readTemplate(template), {
     ComponentName: morphName,
     fromName: from.name,
     toName: to.name,
@@ -64,20 +70,14 @@ export async function addMorphCommand(opts: Options): Promise<void> {
   });
 
   const dest = opts.dest ?? join("components", "svg-icons");
-  await writeProjectFile(join(dest, `${from.name}-${to.name}-morph.tsx`), componentContent, {
+  await writeProjectFile(join(dest, `${from.name}-${to.name}-morph.${ext}`), componentContent, {
     force: opts.force,
   });
 
   const libDest = opts.libDest ?? join("lib", "svg-icons");
   const enginePath = join(libDest, "morph.ts");
-  const engineTemplate = await readTemplate("morph-engine.tpl");
+  const engineTemplate = readTemplate("morph-engine.tpl");
   await writeProjectFile(enginePath, engineTemplate, { force: opts.force });
-}
-
-function pickFramework(opts: Options): "react" | "vue" | "svelte" {
-  if (opts.vue) return "vue";
-  if (opts.svelte) return "svelte";
-  return "react";
 }
 
 function partsCompatible(a: IconPart[], b: IconPart[]): boolean {

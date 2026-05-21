@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SOURCE_DIR = __dirname;
 const OUTPUT_DIR = join(__dirname, "..", "..", "apps", "docs", "public", "r");
-const MORPH_ENGINE_SRC = join(__dirname, "..", "cli", "templates", "morph-engine.tpl");
+const MORPH_ENGINE_SRC = join(__dirname, "..", "codegen", "templates", "morph-engine.tpl");
 const MORPH_ENGINE_DEST = join(__dirname, "..", "..", "apps", "docs", "lib", "morph-engine.ts");
 
 const VERSION = "1.0.0";
