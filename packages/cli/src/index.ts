@@ -22,10 +22,10 @@ const add = program
   .option("--react", "Generate a React component")
   .option("--vue", "Generate a Vue 3 component")
   .option("--angular", "Generate an Angular standalone component")
-  .option("--dest <dir>", "Destination directory (default: components/svg-icons)")
+  .option("--dest <dir>", "Destination directory (default: components/animated-icons)")
   .option(
     "--lib-dest <dir>",
-    "Where to write helper libs like the morph engine (default: lib/svg-icons)",
+    "Where to write helper libs like the morph engine (default: lib/animated-icons)",
   )
   .option("--registry <url>", "Override the registry base URL")
   .option("--force", "Overwrite existing files")

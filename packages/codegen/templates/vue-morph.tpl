@@ -3,7 +3,7 @@
 
 <script setup lang="ts">
 import { onBeforeUnmount, ref, watch } from "vue";
-import { animateMorph, type MorphHandle } from "../../lib/svg-icons/morph";
+import { animateMorph, type MorphHandle } from "../../lib/animated-icons/morph";
 
 type State = "{{fromName}}" | "{{toName}}";
 

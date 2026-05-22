@@ -8,7 +8,7 @@ dist
 *.log
 .env
 .env.local
-svg-icons
+animated-icons
 
 # generated registry artifacts
 apps/docs/public/r/*.json

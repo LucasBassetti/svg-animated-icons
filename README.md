@@ -102,12 +102,12 @@ npx @svg-animated-icons/cli add arrow-down --vue
 npx @svg-animated-icons/cli add arrow-down --angular
 ```
 
-The CLI fetches the icon from the hosted registry and writes the rendered component to `components/svg-icons/<name>.<ext>` (default). Useful flags:
+The CLI fetches the icon from the hosted registry and writes the rendered component to `components/animated-icons/<name>.<ext>` (default). Useful flags:
 
 | Flag | Default | Purpose |
 | --- | --- | --- |
 | `--react` / `--vue` / `--angular` | — | Pick a framework (required). |
-| `--dest <dir>` | `components/svg-icons` | Where to write the file. |
+| `--dest <dir>` | `components/animated-icons` | Where to write the file. |
 | `--registry <url>` | hosted registry | Use a custom registry (e.g. self-hosted). |
 | `--force` | off | Overwrite an existing file. |
 
@@ -123,7 +123,7 @@ npx @svg-animated-icons/cli add morph play pause --react
 npx @svg-animated-icons/cli add swap menu cross --react
 ```
 
-Morph writes a framework-agnostic `morph.ts` helper to `lib/svg-icons/` (override with `--lib-dest`); swap is self-contained.
+Morph writes a framework-agnostic `morph.ts` helper to `lib/animated-icons/` (override with `--lib-dest`); swap is self-contained.
 
 ---
 

@@ -18,10 +18,10 @@ Per-framework packages ship pre-compiled ESM with `.d.ts`. Consumers do not need
 
 ## Install (CLI, copy into project)
 
-- `npx @svg-animated-icons/cli add <icon-name> --react` — writes `components/svg-icons/<name>.tsx`.
-- `npx @svg-animated-icons/cli add <icon-name> --vue` — writes `components/svg-icons/<name>.vue`.
-- `npx @svg-animated-icons/cli add <icon-name> --angular` — writes `components/svg-icons/<name>.component.ts` (standalone, signal inputs).
-- `npx @svg-animated-icons/cli add morph <iconA> <iconB> --<framework>` — generates a morphing component plus a framework-agnostic `lib/svg-icons/morph.ts` engine.
+- `npx @svg-animated-icons/cli add <icon-name> --react` — writes `components/animated-icons/<name>.tsx`.
+- `npx @svg-animated-icons/cli add <icon-name> --vue` — writes `components/animated-icons/<name>.vue`.
+- `npx @svg-animated-icons/cli add <icon-name> --angular` — writes `components/animated-icons/<name>.component.ts` (standalone, signal inputs).
+- `npx @svg-animated-icons/cli add morph <iconA> <iconB> --<framework>` — generates a morphing component plus a framework-agnostic `lib/animated-icons/morph.ts` engine.
 - `npx @svg-animated-icons/cli add swap <iconA> <iconB> --<framework>` — generates a toggle/swap component.
 
 ## Registry

@@ -49,7 +49,7 @@ export async function addCommand(opts: Options): Promise<void> {
     iconName: icon.name,
   });
 
-  const dest = opts.dest ?? join("components", "svg-icons");
+  const dest = opts.dest ?? join("components", "animated-icons");
   await writeProjectFile(join(dest, `${icon.name}.${ext}`), content, { force: opts.force });
 }
 
