@@ -1,15 +1,22 @@
 #!/usr/bin/env bash
-# Build and publish every public @svg-animated-icons/* package in one go.
-# Requires a fresh 2FA OTP via `--otp` (or $OTP); the same code is reused for
-# all four publishes, which is fine because npm accepts each OTP for ~30s.
+# Build and publish every public @svg-animated-icons/* package.
+#
+# Auth: either an npm automation token in ~/.npmrc (preferred — works with any
+# 2FA method including security keys), or a TOTP one-time password via --otp.
+# Security-key-only accounts cannot pass --otp; use an automation token.
+#
+# Set up an automation token:
+#   1. https://www.npmjs.com/settings/<username>/tokens → Generate New Token
+#      → Classic Token → Automation. Automation tokens bypass 2FA on writes.
+#   2. npm config set //registry.npmjs.org/:_authToken=npm_xxx
 #
 # Usage:
-#   bash scripts/publish-all.sh --otp 123456
-#   OTP=123456 bash scripts/publish-all.sh
-#   bash scripts/publish-all.sh --otp 123456 --skip-build
+#   pnpm publish:all                       # auth via token in ~/.npmrc
+#   pnpm publish:all -- --otp 123456       # auth via TOTP
+#   OTP=123456 pnpm publish:all
+#   bash scripts/publish-all.sh --skip-build
 #
-# Angular publishes from packages/angular/dist/ (ng-packagr writes the real
-# package.json there, see publishConfig.directory in packages/angular/package.json).
+# Angular publishes from packages/angular/dist/ (publishConfig.directory).
 
 set -euo pipefail
 
@@ -24,14 +31,31 @@ while [[ $# -gt 0 ]]; do
     --otp) OTP="$2"; shift 2 ;;
     --otp=*) OTP="${1#*=}"; shift ;;
     --skip-build) SKIP_BUILD=1; shift ;;
-    -h|--help)
-      sed -n '2,12p' "$0"; exit 0 ;;
+    -h|--help) sed -n '2,17p' "$0"; exit 0 ;;
     *) echo "Unknown argument: $1" >&2; exit 64 ;;
   esac
 done
 
-if [[ -z "$OTP" ]]; then
-  echo "Missing --otp <6-digit-code>. Run \`bash $0 --help\` for usage." >&2
+HAS_TOKEN=""
+if grep -qE '^//registry\.npmjs\.org/:_authToken=' "$HOME/.npmrc" 2>/dev/null; then
+  HAS_TOKEN=1
+fi
+
+if [[ -z "$HAS_TOKEN" && -z "$OTP" ]]; then
+  cat >&2 <<'EOF'
+No npm auth available.
+
+Pick one:
+  1. Automation token (recommended — works with any 2FA, including security keys):
+       https://www.npmjs.com/settings/<username>/tokens
+       → Classic Token → Automation
+       npm config set //registry.npmjs.org/:_authToken=npm_xxx
+
+  2. TOTP one-time password (only if you have an authenticator app, not just
+     a security key):
+       bash scripts/publish-all.sh --otp <6-digit-code>
+
+EOF
   exit 64
 fi
 
@@ -67,16 +91,28 @@ fi
 publish_via_pnpm() {
   local pkg="$1"
   echo "==> publishing @svg-animated-icons/$pkg"
-  pnpm --filter "@svg-animated-icons/$pkg" publish \
-    --no-git-checks --access public --otp="$OTP"
+  if [[ -n "$OTP" ]]; then
+    pnpm --filter "@svg-animated-icons/$pkg" publish \
+      --no-git-checks --access public --otp="$OTP"
+  else
+    pnpm --filter "@svg-animated-icons/$pkg" publish \
+      --no-git-checks --access public
+  fi
+}
+
+publish_via_npm_dir() {
+  local dir="$1"
+  echo "==> publishing from $dir"
+  if [[ -n "$OTP" ]]; then
+    ( cd "$dir" && npm publish --access public --otp="$OTP" )
+  else
+    ( cd "$dir" && npm publish --access public )
+  fi
 }
 
 publish_via_pnpm react
 publish_via_pnpm vue
-
-echo "==> publishing @svg-animated-icons/angular (from packages/angular/dist)"
-( cd packages/angular/dist && npm publish --access public --otp="$OTP" )
-
+publish_via_npm_dir packages/angular/dist
 publish_via_pnpm cli
 
 echo
