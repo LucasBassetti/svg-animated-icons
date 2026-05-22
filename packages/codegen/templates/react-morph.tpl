@@ -2,7 +2,7 @@
 // You own this file — edit it freely.
 
 import { useEffect, useRef } from "react";
-import { animateMorph } from "../../lib/svg-icons/morph";
+import { animateMorph } from "../../lib/animated-icons/morph";
 
 type State = "{{fromName}}" | "{{toName}}";
 

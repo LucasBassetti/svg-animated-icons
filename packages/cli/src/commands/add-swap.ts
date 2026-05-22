@@ -64,7 +64,7 @@ export async function addSwapCommand(opts: Options): Promise<void> {
     toCss: to.css,
   });
 
-  const dest = opts.dest ?? join("components", "svg-icons");
+  const dest = opts.dest ?? join("components", "animated-icons");
   await writeProjectFile(join(dest, `${from.name}-${to.name}-swap.${ext}`), content, {
     force: opts.force,
   });

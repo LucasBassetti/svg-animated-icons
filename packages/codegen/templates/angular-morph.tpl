@@ -11,7 +11,7 @@ import {
   input,
   viewChild,
 } from "@angular/core";
-import { animateMorph, type MorphHandle } from "../../lib/svg-icons/morph";
+import { animateMorph, type MorphHandle } from "../../lib/animated-icons/morph";
 
 type State = "{{fromName}}" | "{{toName}}";
 

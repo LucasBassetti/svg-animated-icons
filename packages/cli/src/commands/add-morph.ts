@@ -69,12 +69,12 @@ export async function addMorphCommand(opts: Options): Promise<void> {
     initialPaths: renderInitialPaths(from.meta.parts, partAttrs),
   });
 
-  const dest = opts.dest ?? join("components", "svg-icons");
+  const dest = opts.dest ?? join("components", "animated-icons");
   await writeProjectFile(join(dest, `${from.name}-${to.name}-morph.${ext}`), componentContent, {
     force: opts.force,
   });
 
-  const libDest = opts.libDest ?? join("lib", "svg-icons");
+  const libDest = opts.libDest ?? join("lib", "animated-icons");
   const enginePath = join(libDest, "morph.ts");
   const engineTemplate = readTemplate("morph-engine.tpl");
   await writeProjectFile(enginePath, engineTemplate, { force: opts.force });
