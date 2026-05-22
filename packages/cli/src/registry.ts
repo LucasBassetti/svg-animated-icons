@@ -17,7 +17,7 @@ export type RegistryEntry = {
   meta: IconMeta;
 };
 
-const DEFAULT_REGISTRY = "http://localhost:3000";
+const DEFAULT_REGISTRY = "https://svg-animated-icons.vercel.app";
 
 export function getRegistryBase(override?: string): string {
   return override ?? process.env.SVG_ICONS_REGISTRY ?? DEFAULT_REGISTRY;
