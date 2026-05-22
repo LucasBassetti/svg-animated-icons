@@ -6,7 +6,10 @@
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "@svg-animated-icons/docs#build": {
-      "dependsOn": ["@svg-animated-icons/icons#registry:build"],
+      "dependsOn": [
+        "@svg-animated-icons/codegen#build",
+        "@svg-animated-icons/icons#registry:build"
+      ],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "@svg-animated-icons/react#build": {
