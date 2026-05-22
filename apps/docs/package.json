@@ -12,15 +12,17 @@
   "dependencies": {
     "@svg-animated-icons/codegen": "workspace:*",
     "fuse.js": "^7.3.0",
-    "next": "15.1.3",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
+    "next": "16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
     "shiki": "^1.24.0"
   },
   "devDependencies": {
     "@types/node": "22.10.2",
-    "@types/react": "19.0.2",
-    "@types/react-dom": "19.0.2",
+    "@types/react": "19.2.15",
+    "@types/react-dom": "19.2.3",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "16.2.6",
     "typescript": "5.6.3"
   }
 }
