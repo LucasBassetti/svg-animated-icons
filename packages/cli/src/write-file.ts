@@ -1,6 +1,7 @@
 import { access, mkdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import kleur from "kleur";
+import { formatGenerated } from "./format.js";
 
 export async function writeProjectFile(
   targetPath: string,
@@ -17,8 +18,9 @@ export async function writeProjectFile(
     console.log(kleur.gray("  pass --force to overwrite"));
     return { written: false, path: absolute };
   }
+  const formatted = await formatGenerated(content, absolute);
   await mkdir(dirname(absolute), { recursive: true });
-  await writeFile(absolute, content);
+  await writeFile(absolute, formatted);
   console.log(kleur.green(`✓ wrote ${targetPath}`));
   return { written: true, path: absolute };
 }
