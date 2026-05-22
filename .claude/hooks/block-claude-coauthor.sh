@@ -8,7 +8,7 @@ set -euo pipefail
 jq -r '
   (.tool_input.command // "") as $c |
   if ($c | test("\\b(git commit|gh pr create|gh pr edit)\\b"))
-     and ($c | test("Co-Authored-By:.*([Cc]laude|anthropic\\.com)"))
+     and ($c | test("Co-Authored-By:[^<>]*<[^<>]*(claude|anthropic\\.com)"; "i"))
   then
     {
       hookSpecificOutput: {
