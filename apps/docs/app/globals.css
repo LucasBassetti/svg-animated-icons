@@ -5,7 +5,30 @@
   --fg-dim: #a3a3a3;
   --border: #262626;
   --accent: #60a5fa;
+  --header-bg: rgba(10, 10, 10, 0.85);
+  --hover-overlay: rgba(255, 255, 255, 0.05);
+  --hover-overlay-soft: rgba(255, 255, 255, 0.04);
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+
+.theme-transitioning *,
+.theme-transitioning *::before,
+.theme-transitioning *::after {
+  transition: none !important;
+}
+
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-card: #f7f7f8;
+  --fg: #0a0a0a;
+  --fg-dim: #525252;
+  --border: #e5e5e5;
+  --accent: #2563eb;
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --hover-overlay: rgba(0, 0, 0, 0.05);
+  --hover-overlay-soft: rgba(0, 0, 0, 0.04);
+  color-scheme: light;
 }
 
 * {
@@ -39,7 +62,7 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(10, 10, 10, 0.85);
+  background: var(--header-bg);
   backdrop-filter: saturate(180%) blur(10px);
   -webkit-backdrop-filter: saturate(180%) blur(10px);
   border-bottom: 1px solid var(--border);
@@ -92,14 +115,34 @@ a:hover {
   color: var(--fg);
 }
 
-.site-github-star {
-  display: inline-flex;
-  font-size: 14px;
-  color: #f5b800;
-}
-
 .site-github-count {
   font-variant-numeric: tabular-nums;
+}
+
+.site-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--fg);
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 200ms, border-color 200ms, background 200ms;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  background: var(--hover-overlay);
 }
 
 .site-footer {
@@ -207,7 +250,7 @@ a:hover {
 
 .card-action:hover {
   color: var(--fg);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--hover-overlay);
   border-color: var(--border);
 }
 
@@ -466,7 +509,7 @@ code {
 
 .code-copy:hover {
   color: var(--fg);
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--hover-overlay-soft);
   border-color: var(--border);
 }
 
