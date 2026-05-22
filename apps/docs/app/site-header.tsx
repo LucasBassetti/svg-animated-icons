@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { readIcon } from "@/lib/registry";
 import { IconPreview } from "./icons/[name]/icon-preview";
+import { ThemeToggle } from "./theme-toggle";
 
 const REPO = "LucasBassetti/svg-animated-icons";
 const STAR_REVALIDATE_SECONDS = 3600;
@@ -25,9 +26,10 @@ function formatStars(count: number): string {
 }
 
 export async function SiteHeader() {
-  const [githubIcon, starIcon, stars] = await Promise.all([
+  const [githubIcon, sunIcon, moonIcon, stars] = await Promise.all([
     readIcon("github-logo"),
-    readIcon("star"),
+    readIcon("sun"),
+    readIcon("moon"),
     fetchStarCount(),
   ]);
 
@@ -37,25 +39,23 @@ export async function SiteHeader() {
         <Link href="/" className="site-brand">
           @svg-animated-icons
         </Link>
-        <a
-          href={`https://github.com/${REPO}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="site-github icon-hover-trigger"
-          aria-label="Star on GitHub"
-        >
-          <span className="site-github-logo">
-            <IconPreview svg={githubIcon.svg} css={githubIcon.css} />
-          </span>
-          {stars !== null ? (
-            <>
-              <span className="site-github-star">
-                <IconPreview svg={starIcon.svg} css={starIcon.css} />
-              </span>
+        <div className="site-actions">
+          <ThemeToggle sunIcon={sunIcon} moonIcon={moonIcon} />
+          <a
+            href={`https://github.com/${REPO}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="site-github icon-hover-trigger"
+            aria-label="Star on GitHub"
+          >
+            <span className="site-github-logo">
+              <IconPreview svg={githubIcon.svg} css={githubIcon.css} />
+            </span>
+            {stars !== null ? (
               <span className="site-github-count">{formatStars(stars)}</span>
-            </>
-          ) : null}
-        </a>
+            ) : null}
+          </a>
+        </div>
       </div>
     </header>
   );
