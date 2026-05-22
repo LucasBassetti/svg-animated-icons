@@ -1,6 +1,6 @@
 {
   "name": "@svg-animated-icons/react",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Animated SVG icon React components.",
   "type": "module",
   "main": "./dist/index.js",
@@ -16,7 +16,10 @@
     }
   },
   "sideEffects": false,
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc --noEmit",

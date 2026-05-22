@@ -1,6 +1,6 @@
 {
   "name": "@svg-animated-icons/vue",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Animated SVG icon Vue 3 components.",
   "type": "module",
   "main": "./dist/index.mjs",
@@ -13,7 +13,10 @@
     }
   },
   "sideEffects": false,
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly",
     "typecheck": "vue-tsc --noEmit",

@@ -1,6 +1,6 @@
 {
   "name": "@svg-animated-icons/angular",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Animated SVG icon Angular components.",
   "scripts": {
     "build": "ng-packagr -p ng-package.json",
