@@ -1,6 +1,6 @@
 {
   "name": "@svg-animated-icons/cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Copy animated SVG icon components into your project — shadcn-style.",
   "type": "module",
   "bin": {

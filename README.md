@@ -116,14 +116,9 @@ The CLI fetches the icon from the hosted registry and writes the rendered compon
 The CLI also generates components that combine a pair of icons:
 
 ```sh
-# Animated path morph between two compatible icons (e.g. play ↔ pause).
-npx @svg-animated-icons/cli add morph play pause --react
-
 # State-based swap (e.g. toggle between menu and close icons).
 npx @svg-animated-icons/cli add swap menu cross --react
 ```
-
-Morph writes a framework-agnostic `morph.ts` helper to `lib/animated-icons/` (override with `--lib-dest`); swap is self-contained.
 
 ---
 
@@ -174,8 +169,8 @@ pnpm lint
 
 ## Adding a new framework
 
-1. Add `packages/codegen/templates/<framework>.tpl` (plus `-morph.tpl` and `-swap.tpl` if you want those variants).
-2. Wire the framework into `packages/cli/src/commands/{add,add-morph,add-swap}.ts` and the `--<framework>` flag in `packages/cli/src/index.ts`.
+1. Add `packages/codegen/templates/<framework>.tpl` (plus `-swap.tpl` if you want that variant).
+2. Wire the framework into `packages/cli/src/commands/{add,add-swap}.ts` and the `--<framework>` flag in `packages/cli/src/index.ts`.
 3. Optionally create a `packages/<framework>/` published package and add it to `packages/icons/generate-packages.ts`.
 
 ## Releasing

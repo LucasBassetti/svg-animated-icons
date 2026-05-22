@@ -1,6 +1,6 @@
 {
   "name": "@svg-animated-icons/react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Animated SVG icon React components.",
   "type": "module",
   "main": "./dist/index.js",
