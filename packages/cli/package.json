@@ -1,12 +1,15 @@
 {
   "name": "@svg-animated-icons/cli",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Copy animated SVG icon components into your project — shadcn-style.",
   "type": "module",
   "bin": {
     "svg-animated-icons": "./dist/index.js"
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
