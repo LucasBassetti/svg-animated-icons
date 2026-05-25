@@ -16,18 +16,16 @@
   animation: none;
 }
 
-.ai-switch-icon .switch {
+.ai-switch-icon .knob {
   transform-box: view-box;
   transform-origin: 7.5px 7.5px;
 }
 
-.ai-switch-icon:not(.no-hover):hover .switch {
+.ai-switch-icon:not(.no-hover):hover .knob {
   animation: ai-switch-toggle 700ms ease-in-out;
 }
 
 @keyframes ai-switch-toggle {
-  0%, 100% { transform: scaleX(1); }
-  25% { transform: scaleX(0); }
-  50% { transform: scaleX(-1); }
-  75% { transform: scaleX(0); }
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-6px); }
 }
