@@ -5,7 +5,7 @@
   --fg-dim: #a3a3a3;
   --border: #262626;
   --accent: #60a5fa;
-  --header-bg: rgba(10, 10, 10, 0.85);
+  --header-bg: rgba(10, 10, 10, 0.6);
   --hover-overlay: rgba(255, 255, 255, 0.05);
   --hover-overlay-soft: rgba(255, 255, 255, 0.04);
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -25,7 +25,7 @@
   --fg-dim: #525252;
   --border: #e5e5e5;
   --accent: #2563eb;
-  --header-bg: rgba(255, 255, 255, 0.85);
+  --header-bg: rgba(255, 255, 255, 0.6);
   --hover-overlay: rgba(0, 0, 0, 0.05);
   --hover-overlay-soft: rgba(0, 0, 0, 0.04);
   color-scheme: light;
@@ -63,8 +63,7 @@ a:hover {
   top: 0;
   z-index: 50;
   background: var(--header-bg);
-  backdrop-filter: saturate(180%) blur(10px);
-  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(6px);
   border-bottom: 1px solid var(--border);
 }
 
