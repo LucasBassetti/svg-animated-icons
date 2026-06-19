@@ -533,6 +533,46 @@ code {
   white-space: pre;
 }
 
+.props-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 4px 0 32px;
+  font-size: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.props-table th,
+.props-table td {
+  text-align: left;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.props-table th {
+  color: var(--fg-dim);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.props-table tbody tr:last-child td,
+.props-table tr:last-child td {
+  border-bottom: none;
+}
+
+.props-table td {
+  color: var(--fg-dim);
+}
+
+.props-table td code {
+  color: var(--fg);
+  white-space: nowrap;
+}
+
 .code-card-body.shiki-wrap pre {
   margin: 0;
   padding: 14px 0;
