@@ -1,6 +1,6 @@
 {
   "name": "@svg-animated-icons/vue",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Animated SVG icon Vue 3 components.",
   "type": "module",
   "main": "./dist/index.mjs",
