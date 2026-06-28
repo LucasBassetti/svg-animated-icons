@@ -26,12 +26,14 @@ function formatStars(count: number): string {
 }
 
 export async function SiteHeader() {
-  const [githubIcon, sunIcon, moonIcon, stars] = await Promise.all([
-    readIcon("github-logo"),
-    readIcon("sun"),
-    readIcon("moon"),
-    fetchStarCount(),
-  ]);
+  const [githubIcon, sunIcon, moonIcon, externalIcon, stars] =
+    await Promise.all([
+      readIcon("github-logo"),
+      readIcon("sun"),
+      readIcon("moon"),
+      readIcon("external-link"),
+      fetchStarCount(),
+    ]);
 
   return (
     <header className="site-header">
@@ -40,6 +42,17 @@ export async function SiteHeader() {
           @svg-animated-icons
         </Link>
         <div className="site-actions">
+          <a
+            href="https://godui.design/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="site-godui icon-hover-trigger"
+          >
+            GodUI
+            <span className="site-godui-external">
+              <IconPreview svg={externalIcon.svg} css={externalIcon.css} />
+            </span>
+          </a>
           <ThemeToggle sunIcon={sunIcon} moonIcon={moonIcon} />
           <a
             href={`https://github.com/${REPO}`}
