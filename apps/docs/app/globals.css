@@ -93,9 +93,10 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  height: 32px;
   color: var(--fg-dim);
   text-decoration: none;
-  padding: 6px 12px;
+  padding: 0 12px;
   border: 1px solid var(--border);
   border-radius: 8px;
   transition: color 200ms, border-color 200ms;
@@ -124,6 +125,31 @@ a:hover {
   gap: 8px;
 }
 
+.site-godui {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 32px;
+  color: var(--fg-dim);
+  text-decoration: none;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  transition: color 200ms, border-color 200ms;
+}
+
+.site-godui:hover {
+  color: var(--fg);
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+.site-godui-external {
+  display: inline-flex;
+  font-size: 15px;
+}
+
 .theme-toggle {
   display: inline-flex;
   align-items: center;
@@ -142,6 +168,20 @@ a:hover {
 .theme-toggle:hover {
   border-color: var(--accent);
   background: var(--hover-overlay);
+}
+
+.theme-toggle-icon {
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-theme="dark"] .theme-toggle-icon--sun {
+  display: inline-flex;
+}
+
+[data-theme="light"] .theme-toggle-icon--moon {
+  display: inline-flex;
 }
 
 .site-footer {
